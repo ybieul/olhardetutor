@@ -1,0 +1,24 @@
+{
+  "app": {
+    "name": "Olhar de Tutor",
+    "tagline": "Preventive tracking for dogs and cats"
+  },
+  "nav": {
+    "login": "Log in",
+    "onboarding": "Welcome",
+    "home": "Home",
+    "checkin": "Check-in",
+    "guides": "Guides",
+    "agenda": "Schedule",
+    "profile": "Profile"
+  },
+  "language": {
+    "label": "Language",
+    "pt-BR": "Português (Brasil)",
+    "en": "English (US)"
+  },
+  "placeholder": {
+    "comingSoon": "Coming soon",
+    "notFound": "Page not found"
+  }
+}

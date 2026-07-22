@@ -1,0 +1,24 @@
+{
+  "app": {
+    "name": "Olhar de Tutor",
+    "tagline": "Acompanhamento preventivo para cães e gatos"
+  },
+  "nav": {
+    "login": "Entrar",
+    "onboarding": "Boas-vindas",
+    "home": "Início",
+    "checkin": "Check-in",
+    "guides": "Guias",
+    "agenda": "Agenda",
+    "profile": "Perfil"
+  },
+  "language": {
+    "label": "Idioma",
+    "pt-BR": "Português (Brasil)",
+    "en": "English (US)"
+  },
+  "placeholder": {
+    "comingSoon": "Em breve",
+    "notFound": "Página não encontrada"
+  }
+}
