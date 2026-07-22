@@ -22,13 +22,24 @@ primeira classe, não um extra.
   dimensões de cada chave.
 - PROIBIDO segredo/credencial no código. Tudo em variáveis de ambiente
   validadas em `src/config/env.ts`.
+- PROIBIDO a `service_role key` do Supabase em qualquer código que rode no
+  front-end. Ela só existe como env var injetada automaticamente em
+  `supabase/functions/` (Edge Functions) — nunca em `.env`/`VITE_*`.
+- PROIBIDO tabela nova sem Row Level Security. Toda tabela em
+  `supabase/migrations/` habilita RLS e políticas `to authenticated` na
+  mesma migration que a cria — nunca em um passo separado depois.
 
 ## Padrões obrigatórios
 
 - TypeScript estrito (`strict: true`). Sem `any` sem justificativa.
 - Organização por feature em `src/features/`.
 - Componentes de UI genéricos em `src/components/ui/`, sempre consumindo tokens.
-- Toda query ao Supabase passa por `src/lib/supabase/` com tipos.
+- Toda query ao Supabase passa por `src/lib/supabase/queries/<feature>.ts`,
+  tipada a partir de `src/lib/supabase/types.ts` — nunca SQL/`.from()`
+  espalhado direto nas telas.
+- Texto livre do usuário (notas, descrições) passa por
+  `sanitizeFreeText()` de `src/lib/security/sanitize.ts` antes de
+  persistir.
 - Responsividade total: mobile-first, testado até desktop.
 - Componentes pequenos, com responsabilidade única. Funções puras quando possível.
 - Nomes de arquivos e código em inglês; textos de UI via i18n.
