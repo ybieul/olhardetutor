@@ -14,7 +14,12 @@ primeira classe, não um extra.
 - PROIBIDO emoji. Usar exclusivamente `lucide-react` para ícones, sempre
   através do wrapper `src/components/ui/Icon.tsx` — nunca `lucide-react`
   direto fora dele.
-- PROIBIDO caminho de imagem literal. Todos vêm de `src/config/assets.config.ts`.
+- PROIBIDO caminho de imagem literal. Toda imagem estática do app (logo,
+  ilustração, ícone de PWA) vem de uma chave em
+  `src/config/assets.config.ts` e é renderizada via
+  `src/components/ui/AppImage.tsx` — nunca `<img src="...">` direto com
+  caminho fixo. Ver `docs/ASSETS_GUIDE.md` para nome de arquivo, pasta e
+  dimensões de cada chave.
 - PROIBIDO segredo/credencial no código. Tudo em variáveis de ambiente
   validadas em `src/config/env.ts`.
 

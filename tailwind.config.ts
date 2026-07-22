@@ -40,6 +40,10 @@ export default {
         'track-sm': sizing.trackHeight.sm,
         'track-md': sizing.trackHeight.md,
         'track-lg': sizing.trackHeight.lg,
+        'image-sm': sizing.imageHeight.sm,
+        'image-md': sizing.imageHeight.md,
+        'image-lg': sizing.imageHeight.lg,
+        'image-xl': sizing.imageHeight.xl,
       },
       width: {
         'icon-sm': sizing.iconSize.sm,

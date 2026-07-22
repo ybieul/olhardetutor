@@ -2,7 +2,7 @@ import { useState, type ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Cat, Dog, Heart } from 'lucide-react';
 
-import { ASSETS_CONFIG } from '@/config/assets.config';
+import { DEV_BROKEN_IMAGE_PATH } from '@/config/assets.config';
 import { Header } from '@/components/layout/Header';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
@@ -18,6 +18,7 @@ import { ProgressBar } from '@/components/ui/ProgressBar';
 import { Skeleton } from '@/components/ui/Skeleton';
 import { Modal } from '@/components/ui/Modal';
 import { Sheet } from '@/components/ui/Sheet';
+import { AppImage } from '@/components/ui/AppImage';
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
@@ -140,7 +141,7 @@ export function DevShowcasePage() {
           <Avatar alt={t('dev:avatar.alt')} size="md" />
           <Avatar alt={t('dev:avatar.alt')} size="lg" />
           <Avatar alt={t('dev:avatar.alt')} size="xl" />
-          <Avatar alt={t('dev:avatar.altBroken')} src={ASSETS_CONFIG.dev.brokenImage} />
+          <Avatar alt={t('dev:avatar.altBroken')} src={DEV_BROKEN_IMAGE_PATH} />
         </Row>
         <Row caption={t('dev:labels.badge')}>
           <Badge label={t('dev:badge.normal')} level="success" />
@@ -163,6 +164,15 @@ export function DevShowcasePage() {
           </div>
           <p className="text-xs text-neutral-500">{t('dev:skeleton.note')}</p>
         </Row>
+      </Section>
+
+      <Section title={t('dev:sections.assets')}>
+        <Row caption={t('dev:sections.assets')}>
+          <AppImage assetKey="logoPrimary" alt={t('dev:appImage.logoPrimaryAlt')} size="md" />
+          <AppImage assetKey="logoIcon" alt={t('dev:appImage.logoIconAlt')} size="md" />
+          <AppImage assetKey="pwaIcon192" alt={t('dev:appImage.pwaIconAlt')} width={64} height={64} />
+        </Row>
+        <p className="text-xs text-neutral-500">{t('dev:appImage.note')}</p>
       </Section>
 
       <Section title={t('dev:sections.overlays')}>

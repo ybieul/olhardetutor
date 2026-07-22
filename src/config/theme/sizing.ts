@@ -55,6 +55,19 @@ export const dialogSize = {
 /** Width of the desktop side-rail navigation. */
 export const railWidth = '16rem'; // 256px
 
+/**
+ * Height presets for AppImage (logos, illustrations, PWA icon previews).
+ * Width is left to flow naturally so non-square assets like logos keep
+ * their aspect ratio — pass explicit width/height props when a fixed box
+ * is required instead.
+ */
+export const imageHeight = {
+  sm: '2rem', // 32px
+  md: '4rem', // 64px
+  lg: '8rem', // 128px
+  xl: '12rem', // 192px
+} as const;
+
 export const sizing = {
   buttonHeight,
   iconSize,
@@ -65,6 +78,7 @@ export const sizing = {
   trackHeight,
   dialogSize,
   railWidth,
+  imageHeight,
 } as const;
 
 export type Sizing = typeof sizing;

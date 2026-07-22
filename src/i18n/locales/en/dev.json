@@ -7,7 +7,8 @@
     "inputs": "Input & TextArea",
     "selection": "Selection controls",
     "display": "Display",
-    "overlays": "Overlays"
+    "overlays": "Overlays",
+    "assets": "AppImage"
   },
   "button": {
     "variants": "Variants",
@@ -101,5 +102,11 @@
     "progressBar": "ProgressBar",
     "skeleton": "Skeleton",
     "modalSheet": "Modal / Sheet"
+  },
+  "appImage": {
+    "note": "No files under public/assets/ yet — each one is showing AppImage's graceful fallback instead of a broken image.",
+    "logoPrimaryAlt": "Olhar de Tutor primary logo",
+    "logoIconAlt": "Olhar de Tutor icon mark",
+    "pwaIconAlt": "PWA icon preview, 192×192"
   }
 }

@@ -7,7 +7,8 @@
     "inputs": "Input & TextArea",
     "selection": "Controles de seleção",
     "display": "Exibição",
-    "overlays": "Overlays"
+    "overlays": "Overlays",
+    "assets": "AppImage"
   },
   "button": {
     "variants": "Variantes",
@@ -101,5 +102,11 @@
     "progressBar": "ProgressBar",
     "skeleton": "Skeleton",
     "modalSheet": "Modal / Sheet"
+  },
+  "appImage": {
+    "note": "Ainda não há arquivos em public/assets/ — cada um está mostrando o fallback do AppImage em vez de uma imagem quebrada.",
+    "logoPrimaryAlt": "Logo principal do Olhar de Tutor",
+    "logoIconAlt": "Ícone-símbolo do Olhar de Tutor",
+    "pwaIconAlt": "Pré-visualização do ícone de PWA, 192×192"
   }
 }
