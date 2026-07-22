@@ -1,0 +1,105 @@
+{
+  "title": "Design System",
+  "subtitle": "Todos os primitivos de UI, para inspeção visual. Remover esta rota antes de publicar.",
+  "sections": {
+    "button": "Button",
+    "card": "Card",
+    "inputs": "Input & TextArea",
+    "selection": "Controles de seleção",
+    "display": "Exibição",
+    "overlays": "Overlays"
+  },
+  "button": {
+    "variants": "Variantes",
+    "primary": "Primário",
+    "secondary": "Secundário",
+    "ghost": "Ghost",
+    "danger": "Perigo",
+    "sizes": "Tamanhos",
+    "small": "Pequeno",
+    "medium": "Médio",
+    "large": "Grande",
+    "states": "Estados",
+    "loading": "Carregando",
+    "withIcon": "Com ícone",
+    "fullWidth": "Largura total"
+  },
+  "card": {
+    "title": "Título do card",
+    "body": "Cards agrupam conteúdo relacionado — padding, sombra e raio vêm dos design tokens."
+  },
+  "input": {
+    "label": "Nome do pet",
+    "placeholder": "ex.: Bella",
+    "helper": "Isso é exibido ao veterinário."
+  },
+  "inputError": {
+    "label": "E-mail",
+    "placeholder": "voce@exemplo.com",
+    "error": "Digite um e-mail válido."
+  },
+  "textarea": {
+    "label": "Observações",
+    "placeholder": "Notou mais alguma coisa hoje?"
+  },
+  "slider": {
+    "label": "Apetite comparado ao normal",
+    "muchLess": "Muito menos",
+    "less": "Menos",
+    "normal": "Normal",
+    "more": "Mais",
+    "muchMore": "Muito mais"
+  },
+  "segmentedControl": {
+    "label": "Tipo de pet",
+    "dog": "Cão",
+    "cat": "Gato"
+  },
+  "checkbox": {
+    "label": "Lembrar sobre os check-ins"
+  },
+  "radioGroup": {
+    "label": "Preferência de contato",
+    "email": "E-mail",
+    "phone": "Telefone",
+    "sms": "SMS"
+  },
+  "avatar": {
+    "alt": "Foto da Bella",
+    "altBroken": "Foto que falha ao carregar"
+  },
+  "badge": {
+    "normal": "Normal",
+    "observe": "Observar",
+    "attention": "Atenção",
+    "urgent": "Urgência"
+  },
+  "progressBar": {
+    "label": "Progresso do onboarding, etapa 2 de 4"
+  },
+  "skeleton": {
+    "note": "Placeholder de carregamento — decorativo, sem texto."
+  },
+  "modal": {
+    "trigger": "Abrir modal",
+    "title": "Confirmar ação",
+    "body": "Diálogo centralizado com fundo, foco preso e fechamento com Esc.",
+    "confirm": "Confirmar"
+  },
+  "sheet": {
+    "trigger": "Abrir painel",
+    "title": "Ações rápidas",
+    "body": "Desliza a partir da base no mobile e centraliza em telas maiores."
+  },
+  "header": {
+    "example": "Título de tela de exemplo",
+    "action": "Ação"
+  },
+  "labels": {
+    "avatar": "Avatar",
+    "badge": "Badge",
+    "progressBar": "ProgressBar",
+    "skeleton": "Skeleton",
+    "modalSheet": "Modal / Sheet"
+  }
+}

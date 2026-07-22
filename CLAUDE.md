@@ -11,7 +11,9 @@ primeira classe, não um extra.
   espaçamento, raio, sombra). Tudo vem de `src/config/theme/`.
 - PROIBIDO texto literal na interface. Todo texto vem de `src/i18n/locales`
   via `useTranslation()`. Nem uma palavra hardcoded.
-- PROIBIDO emoji. Usar exclusivamente `lucide-react` para ícones.
+- PROIBIDO emoji. Usar exclusivamente `lucide-react` para ícones, sempre
+  através do wrapper `src/components/ui/Icon.tsx` — nunca `lucide-react`
+  direto fora dele.
 - PROIBIDO caminho de imagem literal. Todos vêm de `src/config/assets.config.ts`.
 - PROIBIDO segredo/credencial no código. Tudo em variáveis de ambiente
   validadas em `src/config/env.ts`.

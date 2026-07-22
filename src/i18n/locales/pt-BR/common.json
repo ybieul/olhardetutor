@@ -4,6 +4,7 @@
     "tagline": "Acompanhamento preventivo para cães e gatos"
   },
   "nav": {
+    "label": "Navegação principal",
     "login": "Entrar",
     "onboarding": "Boas-vindas",
     "home": "Início",
@@ -16,6 +17,9 @@
     "label": "Idioma",
     "pt-BR": "Português (Brasil)",
     "en": "English (US)"
+  },
+  "actions": {
+    "close": "Fechar"
   },
   "placeholder": {
     "comingSoon": "Em breve",

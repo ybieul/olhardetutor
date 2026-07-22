@@ -1,0 +1,105 @@
+{
+  "title": "Design System",
+  "subtitle": "Every UI primitive, for visual inspection. Remove this route before shipping.",
+  "sections": {
+    "button": "Button",
+    "card": "Card",
+    "inputs": "Input & TextArea",
+    "selection": "Selection controls",
+    "display": "Display",
+    "overlays": "Overlays"
+  },
+  "button": {
+    "variants": "Variants",
+    "primary": "Primary",
+    "secondary": "Secondary",
+    "ghost": "Ghost",
+    "danger": "Danger",
+    "sizes": "Sizes",
+    "small": "Small",
+    "medium": "Medium",
+    "large": "Large",
+    "states": "States",
+    "loading": "Loading",
+    "withIcon": "With icon",
+    "fullWidth": "Full width"
+  },
+  "card": {
+    "title": "Card title",
+    "body": "Cards group related content — padding, shadow and radius all come from design tokens."
+  },
+  "input": {
+    "label": "Pet name",
+    "placeholder": "e.g. Bella",
+    "helper": "This is shown to your vet."
+  },
+  "inputError": {
+    "label": "Email",
+    "placeholder": "you@example.com",
+    "error": "Enter a valid email address."
+  },
+  "textarea": {
+    "label": "Notes",
+    "placeholder": "Anything else you noticed today?"
+  },
+  "slider": {
+    "label": "Appetite compared to usual",
+    "muchLess": "Much less",
+    "less": "Less",
+    "normal": "Normal",
+    "more": "More",
+    "muchMore": "Much more"
+  },
+  "segmentedControl": {
+    "label": "Pet type",
+    "dog": "Dog",
+    "cat": "Cat"
+  },
+  "checkbox": {
+    "label": "Remind me about check-ins"
+  },
+  "radioGroup": {
+    "label": "Contact preference",
+    "email": "Email",
+    "phone": "Phone",
+    "sms": "SMS"
+  },
+  "avatar": {
+    "alt": "Bella's photo",
+    "altBroken": "Photo that fails to load"
+  },
+  "badge": {
+    "normal": "Normal",
+    "observe": "Observe",
+    "attention": "Attention",
+    "urgent": "Urgent"
+  },
+  "progressBar": {
+    "label": "Onboarding progress, step 2 of 4"
+  },
+  "skeleton": {
+    "note": "Loading placeholder — decorative, carries no text."
+  },
+  "modal": {
+    "trigger": "Open modal",
+    "title": "Confirm action",
+    "body": "Centered dialog with a backdrop, focus trap and Escape-to-close.",
+    "confirm": "Confirm"
+  },
+  "sheet": {
+    "trigger": "Open sheet",
+    "title": "Quick actions",
+    "body": "Slides up from the bottom on mobile and centers on larger screens."
+  },
+  "header": {
+    "example": "Example screen title",
+    "action": "Action"
+  },
+  "labels": {
+    "avatar": "Avatar",
+    "badge": "Badge",
+    "progressBar": "ProgressBar",
+    "skeleton": "Skeleton",
+    "modalSheet": "Modal / Sheet"
+  }
+}

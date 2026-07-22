@@ -12,6 +12,7 @@ export * from './sizing';
 export * from './radius';
 export * from './shadows';
 export * from './breakpoints';
+export * from './zIndex';
 
 import { colors } from './colors';
 import { typography } from './typography';
@@ -20,6 +21,7 @@ import { sizing } from './sizing';
 import { radius } from './radius';
 import { shadows } from './shadows';
 import { breakpoints } from './breakpoints';
+import { zIndex } from './zIndex';
 
 export const theme = {
   colors,
@@ -29,6 +31,7 @@ export const theme = {
   radius,
   shadows,
   breakpoints,
+  zIndex,
 } as const;
 
 export type Theme = typeof theme;

@@ -8,6 +8,10 @@ export const ASSETS_CONFIG = {
   branding: {
     icon: '/favicon.svg',
   },
+  /** Deliberately-missing path, used to demo Avatar's broken-image fallback. */
+  dev: {
+    brokenImage: '/does-not-exist.jpg',
+  },
 } as const;
 
 export type AssetsConfig = typeof ASSETS_CONFIG;

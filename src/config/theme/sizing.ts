@@ -31,12 +31,40 @@ export const cardSize = {
 /** Max width applied to the app's main content wrapper. */
 export const maxContentWidth = '75rem'; // 1200px
 
+/** Checkbox/radio control dimensions. */
+export const controlSize = {
+  sm: '1rem', // 16px
+  md: '1.25rem', // 20px
+  lg: '1.5rem', // 24px
+} as const;
+
+/** Track thickness for Slider and ProgressBar. */
+export const trackHeight = {
+  sm: '0.375rem', // 6px
+  md: '0.5rem', // 8px
+  lg: '0.75rem', // 12px
+} as const;
+
+/** Modal/Sheet panel dimensions. */
+export const dialogSize = {
+  modalMaxWidth: '32rem', // 512px
+  sheetMaxWidth: '32rem', // 512px
+  maxHeight: '90vh',
+} as const;
+
+/** Width of the desktop side-rail navigation. */
+export const railWidth = '16rem'; // 256px
+
 export const sizing = {
   buttonHeight,
   iconSize,
   avatarSize,
   cardSize,
   maxContentWidth,
+  controlSize,
+  trackHeight,
+  dialogSize,
+  railWidth,
 } as const;
 
 export type Sizing = typeof sizing;

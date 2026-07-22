@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { cn } from '@/lib/cn';
 import { useLanguage } from '@/i18n/useLanguage';
+import { Icon } from '@/components/ui/Icon';
 
 export function LanguageSwitcher() {
   const { t } = useTranslation('common');
@@ -10,7 +11,7 @@ export function LanguageSwitcher() {
 
   return (
     <div className="flex items-center gap-8" role="group" aria-label={t('language.label')}>
-      <Languages className="h-icon-sm w-icon-sm text-neutral-500" aria-hidden="true" />
+      <Icon icon={Languages} size="sm" color="neutral" />
       {supportedLanguages.map((lng) => (
         <button
           key={lng}

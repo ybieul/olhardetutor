@@ -4,6 +4,7 @@
     "tagline": "Preventive tracking for dogs and cats"
   },
   "nav": {
+    "label": "Main navigation",
     "login": "Log in",
     "onboarding": "Welcome",
     "home": "Home",
@@ -16,6 +17,9 @@
     "label": "Language",
     "pt-BR": "Português (Brasil)",
     "en": "English (US)"
+  },
+  "actions": {
+    "close": "Close"
   },
   "placeholder": {
     "comingSoon": "Coming soon",

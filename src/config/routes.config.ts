@@ -11,6 +11,8 @@ export const ROUTES = {
   guides: '/guides',
   agenda: '/agenda',
   profile: '/profile',
+  /** Component gallery for visual QA — not part of the shipped app. */
+  devShowcase: '/_dev',
 } as const;
 
 export type RouteKey = keyof typeof ROUTES;

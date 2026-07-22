@@ -1,5 +1,5 @@
 import type { Config } from 'tailwindcss';
-import { colors, typography, spacing, radius, shadows, breakpoints, sizing } from './src/config/theme';
+import { colors, typography, spacing, radius, shadows, breakpoints, sizing, zIndex } from './src/config/theme';
 
 /**
  * Tailwind reads every scale from src/config/theme/ — colors, type scale,
@@ -20,6 +20,7 @@ export default {
     borderRadius: radius,
     boxShadow: shadows,
     screens: breakpoints,
+    zIndex,
     extend: {
       height: {
         'btn-sm': sizing.buttonHeight.sm,
@@ -33,6 +34,12 @@ export default {
         'avatar-md': sizing.avatarSize.md,
         'avatar-lg': sizing.avatarSize.lg,
         'avatar-xl': sizing.avatarSize.xl,
+        'control-sm': sizing.controlSize.sm,
+        'control-md': sizing.controlSize.md,
+        'control-lg': sizing.controlSize.lg,
+        'track-sm': sizing.trackHeight.sm,
+        'track-md': sizing.trackHeight.md,
+        'track-lg': sizing.trackHeight.lg,
       },
       width: {
         'icon-sm': sizing.iconSize.sm,
@@ -46,9 +53,18 @@ export default {
         'card-sm': sizing.cardSize.sm,
         'card-md': sizing.cardSize.md,
         'card-lg': sizing.cardSize.lg,
+        'control-sm': sizing.controlSize.sm,
+        'control-md': sizing.controlSize.md,
+        'control-lg': sizing.controlSize.lg,
+        rail: sizing.railWidth,
       },
       maxWidth: {
         content: sizing.maxContentWidth,
+        modal: sizing.dialogSize.modalMaxWidth,
+        sheet: sizing.dialogSize.sheetMaxWidth,
+      },
+      maxHeight: {
+        modal: sizing.dialogSize.maxHeight,
       },
     },
   },

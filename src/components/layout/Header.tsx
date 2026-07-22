@@ -1,21 +1,16 @@
-import { PawPrint } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import type { ReactNode } from 'react';
 
-import { LanguageSwitcher } from '@/components/layout/LanguageSwitcher';
+type HeaderProps = {
+  title: string;
+  action?: ReactNode;
+};
 
-export function Header() {
-  const { t } = useTranslation('common');
-
+/** Per-screen title bar with an optional contextual action (e.g. a Button). */
+export function Header({ title, action }: HeaderProps) {
   return (
-    <header className="flex items-center justify-between gap-16 border-b border-neutral-200 px-16 py-12">
-      <div className="flex items-center gap-8">
-        <PawPrint className="h-icon-lg w-icon-lg text-primary-500" aria-hidden="true" />
-        <div>
-          <p className="text-lg font-bold leading-tight text-foreground-light">{t('app.name')}</p>
-          <p className="text-xs text-neutral-500">{t('app.tagline')}</p>
-        </div>
-      </div>
-      <LanguageSwitcher />
+    <header className="mb-16 flex items-center justify-between gap-16">
+      <h1 className="text-2xl font-semibold text-foreground-light">{title}</h1>
+      {action ? <div className="flex items-center gap-8">{action}</div> : null}
     </header>
   );
 }

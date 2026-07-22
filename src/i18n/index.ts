@@ -18,6 +18,7 @@ import ptBRCheckin from './locales/pt-BR/checkin.json';
 import ptBRGuides from './locales/pt-BR/guides.json';
 import ptBRAgenda from './locales/pt-BR/agenda.json';
 import ptBRProfile from './locales/pt-BR/profile.json';
+import ptBRDev from './locales/pt-BR/dev.json';
 
 import enCommon from './locales/en/common.json';
 import enAuth from './locales/en/auth.json';
@@ -27,6 +28,7 @@ import enCheckin from './locales/en/checkin.json';
 import enGuides from './locales/en/guides.json';
 import enAgenda from './locales/en/agenda.json';
 import enProfile from './locales/en/profile.json';
+import enDev from './locales/en/dev.json';
 
 const resources = {
   'pt-BR': {
@@ -38,6 +40,7 @@ const resources = {
     guides: ptBRGuides,
     agenda: ptBRAgenda,
     profile: ptBRProfile,
+    dev: ptBRDev,
   },
   en: {
     common: enCommon,
@@ -48,6 +51,7 @@ const resources = {
     guides: enGuides,
     agenda: enAgenda,
     profile: enProfile,
+    dev: enDev,
   },
 } as const;
 
