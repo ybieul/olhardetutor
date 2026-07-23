@@ -8,5 +8,6 @@
     "sessionExpired": "Sua sessão expirou. Entre novamente.",
     "linkExpired": "Este link expirou ou já foi usado. Solicite um novo.",
     "generic": "Não foi possível concluir a ação. Tente novamente."
-  }
+  },
+  "generic": "Algo deu errado. Tente novamente."
 }

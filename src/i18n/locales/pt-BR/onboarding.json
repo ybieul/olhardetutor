@@ -1,1 +1,77 @@
-{}
+{
+  "progress": {
+    "label": "Etapa {{current}} de {{total}}"
+  },
+  "nav": {
+    "back": "Voltar",
+    "continue": "Continuar",
+    "finish": "Começar"
+  },
+  "species": {
+    "title": "Vamos conhecer seu pet",
+    "subtitle": "Cada espécie tem seus próprios sinais. Comece nos contando quem vai ganhar todo esse cuidado.",
+    "dog": "Cão",
+    "cat": "Gato",
+    "error": "Escolha uma espécie para continuar."
+  },
+  "lifeStage": {
+    "title": "Em que fase da vida ele está?",
+    "subtitle": "Filhotes, adultos e idosos pedem um olhar diferente — isso ajusta tudo o que vamos acompanhar a partir de agora.",
+    "options": {
+      "puppy": {
+        "label": "Filhote",
+        "description": "Crescimento rápido, vacinas em dia e muita curiosidade para observar."
+      },
+      "adult": {
+        "label": "Adulto",
+        "description": "A fase de manter a rotina saudável e ficar de olho em pequenas mudanças."
+      },
+      "senior": {
+        "label": "Idoso",
+        "description": "Cuidados mais próximos — é quando pequenos sinais importam mais."
+      }
+    },
+    "ageRangeMonths": "{{min}} a {{max}} meses",
+    "ageRangeMonthsOpenEnded": "a partir de {{min}} meses",
+    "ageRangeYears": "{{min}} a {{max}} anos",
+    "ageRangeYearsOpenEnded": "a partir de {{min}} anos",
+    "error": "Escolha uma fase de vida para continuar."
+  },
+  "profile": {
+    "title": "Um pouco mais sobre ele",
+    "subtitle": "Essas informações nos ajudam a entender o que é normal para o seu pet, especificamente.",
+    "nameLabel": "Nome",
+    "namePlaceholder": "Como ele se chama?",
+    "nameError": "Digite o nome do seu pet.",
+    "breedLabel": "Raça",
+    "breedPlaceholder": "Ex.: Labrador, poodle...",
+    "breedUnknown": "Não sei / SRD",
+    "birthDateModeLabel": "Como prefere informar a idade?",
+    "birthDateModeExact": "Data de nascimento",
+    "birthDateModeApproximate": "Idade aproximada",
+    "birthDateLabel": "Data de nascimento",
+    "birthDateError": "Escolha uma data válida — não pode ser no futuro.",
+    "approximateAgeLabel": "Idade aproximada",
+    "approximateAgeYearsPlaceholder": "Anos",
+    "approximateAgeMonthsPlaceholder": "Meses",
+    "approximateAgeError": "Informe pelo menos anos ou meses.",
+    "weightLabel": "Peso atual (kg)",
+    "weightPlaceholder": "Ex.: 12.5",
+    "weightError": "Informe um peso válido, maior que zero.",
+    "photoLabel": "Foto do pet (opcional)",
+    "photoHelp": "Uma boa foto ajuda a reconhecer seu pet rapidinho.",
+    "photoUpload": "Escolher foto",
+    "photoChange": "Trocar foto",
+    "photoUploading": "Enviando...",
+    "photoUploadError": "Não foi possível enviar a foto. Tente novamente.",
+    "photoAlt": "Foto de {{name}}"
+  },
+  "baseline": {
+    "title": "O DNA do seu pet",
+    "subtitle": "Cada pet é único. Nos próximos {{days}} dias, vamos observar a rotina dele para aprender o que é NORMAL — e é a partir disso que conseguimos perceber quando algo muda.",
+    "dayLabel": "Dia {{day}}",
+    "explanation": "Um check-in rápido por dia é tudo que precisamos. Sem pressa — o objetivo é conhecer, não diagnosticar.",
+    "cta": "Começar a linha de base",
+    "submitError": "Não foi possível salvar seu pet agora. Tente novamente."
+  }
+}

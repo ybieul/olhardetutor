@@ -1,1 +1,77 @@
-{}
+{
+  "progress": {
+    "label": "Step {{current}} of {{total}}"
+  },
+  "nav": {
+    "back": "Back",
+    "continue": "Continue",
+    "finish": "Get started"
+  },
+  "species": {
+    "title": "Let's get to know your pet",
+    "subtitle": "Every species has its own signals. Start by telling us who's about to get all this care.",
+    "dog": "Dog",
+    "cat": "Cat",
+    "error": "Choose a species to continue."
+  },
+  "lifeStage": {
+    "title": "What life stage are they in?",
+    "subtitle": "Puppies/kittens, adults, and seniors need a different kind of attention — this shapes everything we'll track from here on.",
+    "options": {
+      "puppy": {
+        "label": "Puppy / Kitten",
+        "description": "Fast growth, vaccines on schedule, and plenty of curiosity to watch for."
+      },
+      "adult": {
+        "label": "Adult",
+        "description": "The stage of keeping a healthy routine and noticing small changes."
+      },
+      "senior": {
+        "label": "Senior",
+        "description": "Closer care — this is when small signs matter the most."
+      }
+    },
+    "ageRangeMonths": "{{min}} to {{max}} months",
+    "ageRangeMonthsOpenEnded": "{{min}}+ months",
+    "ageRangeYears": "{{min}} to {{max}} years",
+    "ageRangeYearsOpenEnded": "{{min}}+ years",
+    "error": "Choose a life stage to continue."
+  },
+  "profile": {
+    "title": "A bit more about them",
+    "subtitle": "This helps us understand what's normal for your pet, specifically.",
+    "nameLabel": "Name",
+    "namePlaceholder": "What's their name?",
+    "nameError": "Enter your pet's name.",
+    "breedLabel": "Breed",
+    "breedPlaceholder": "e.g. Labrador, poodle...",
+    "breedUnknown": "I don't know / Mixed breed",
+    "birthDateModeLabel": "How would you like to enter their age?",
+    "birthDateModeExact": "Birth date",
+    "birthDateModeApproximate": "Approximate age",
+    "birthDateLabel": "Birth date",
+    "birthDateError": "Choose a valid date — it can't be in the future.",
+    "approximateAgeLabel": "Approximate age",
+    "approximateAgeYearsPlaceholder": "Years",
+    "approximateAgeMonthsPlaceholder": "Months",
+    "approximateAgeError": "Enter at least years or months.",
+    "weightLabel": "Current weight (kg)",
+    "weightPlaceholder": "e.g. 12.5",
+    "weightError": "Enter a valid weight greater than zero.",
+    "photoLabel": "Pet photo (optional)",
+    "photoHelp": "A good photo helps you recognize your pet at a glance.",
+    "photoUpload": "Choose photo",
+    "photoChange": "Change photo",
+    "photoUploading": "Uploading...",
+    "photoUploadError": "Couldn't upload the photo. Please try again.",
+    "photoAlt": "{{name}}'s photo"
+  },
+  "baseline": {
+    "title": "Your pet's DNA",
+    "subtitle": "Every pet is unique. Over the next {{days}} days, we'll observe their routine to learn what's NORMAL for them — and that's what lets us notice when something changes.",
+    "dayLabel": "Day {{day}}",
+    "explanation": "One quick check-in a day is all it takes. No rush — the goal is to get to know them, not to diagnose.",
+    "cta": "Start the baseline",
+    "submitError": "Couldn't save your pet right now. Please try again."
+  }
+}

@@ -1,1 +1,113 @@
-{}
+{
+  "title": "Check-in diário",
+  "subtitle": "Como {{name}} está hoje?",
+  "alreadyDone": {
+    "title": "Já registrado hoje",
+    "subtitle": "Você já fez o check-in de {{name}} hoje."
+  },
+  "disclaimer": "Aplicativo educativo de observação preventiva. Não faz diagnóstico nem substitui o veterinário.",
+  "feeding": {
+    "label": "Alimentação",
+    "marks": {
+      "1": "Não comeu",
+      "2": "Comeu pouco",
+      "3": "Normal",
+      "4": "Comeu bem",
+      "5": "Comeu tudo"
+    }
+  },
+  "water": {
+    "label": "Água",
+    "marks": {
+      "1": "Quase nada",
+      "2": "Bebeu pouco",
+      "3": "Normal",
+      "4": "Bastante",
+      "5": "Muito"
+    }
+  },
+  "sleep": {
+    "label": "Sono",
+    "marks": {
+      "1": "Muito mais",
+      "2": "Mais que o normal",
+      "3": "Normal",
+      "4": "Menos que o normal",
+      "5": "Muito menos"
+    }
+  },
+  "activity": {
+    "label": "Energia e atividade",
+    "marks": {
+      "1": "Apático",
+      "2": "Pouco ativo",
+      "3": "Normal",
+      "4": "Bem ativo",
+      "5": "Muito ativo"
+    }
+  },
+  "stool": {
+    "label": "Fezes",
+    "normal": "Normal",
+    "different": "Diferente",
+    "notObserved": "Não fez",
+    "detailsTitle": "O que você observou?",
+    "soft": "Moles",
+    "hard": "Duras",
+    "blood": "Com sangue",
+    "mucus": "Com muco",
+    "colorChange": "Cor diferente",
+    "parasites": "Parasitas"
+  },
+  "urine": {
+    "label": "Urina",
+    "normal": "Normal",
+    "different": "Diferente",
+    "notObserved": "Não observei",
+    "detailsTitle": "O que você observou?",
+    "increasedFrequency": "Mais frequente",
+    "decreasedFrequency": "Menos frequente",
+    "colorChange": "Cor diferente",
+    "blood": "Com sangue",
+    "straining": "Com esforço"
+  },
+  "behavior": {
+    "label": "Comportamento",
+    "marks": {
+      "1": "Muito diferente",
+      "2": "Um pouco diferente",
+      "3": "Normal",
+      "4": "Bem normal",
+      "5": "Perfeito"
+    }
+  },
+  "freeNote": {
+    "label": "Algo diferente hoje?",
+    "placeholder": "Descreva qualquer observação adicional...",
+    "helperText": "Opcional — qualquer coisa que chamou sua atenção."
+  },
+  "submit": "Salvar check-in",
+  "saving": "Salvando...",
+  "summary": {
+    "title": "Resumo do dia",
+    "scoreLabel": "Score do dia",
+    "band": {
+      "high": "Ótimo",
+      "medium": "Atenção",
+      "low": "Preocupante"
+    },
+    "message": {
+      "high": "{{name}} teve um ótimo dia! Continue com a observação diária.",
+      "medium": "Dia ok. Fique de olho — algumas categorias pedem atenção.",
+      "low": "Várias variações hoje. Se persistir, considere consultar um veterinário."
+    },
+    "trendTitle": "Últimos 7 dias",
+    "noHistory": "Este é o primeiro check-in!",
+    "guidesHint": "Consulte o Guia de Sinais para entender o que observar.",
+    "newCheckin": "Novo check-in amanhã"
+  },
+  "errors": {
+    "save": "Não foi possível salvar o check-in. Tente novamente.",
+    "load": "Não foi possível carregar os dados. Tente novamente."
+  }
+}

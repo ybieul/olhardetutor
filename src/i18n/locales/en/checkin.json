@@ -1,1 +1,113 @@
-{}
+{
+  "title": "Daily check-in",
+  "subtitle": "How is {{name}} doing today?",
+  "alreadyDone": {
+    "title": "Already recorded today",
+    "subtitle": "You've already completed today's check-in for {{name}}."
+  },
+  "disclaimer": "Educational preventive observation app. Does not diagnose or replace veterinary care.",
+  "feeding": {
+    "label": "Feeding",
+    "marks": {
+      "1": "Didn't eat",
+      "2": "Ate little",
+      "3": "Normal",
+      "4": "Ate well",
+      "5": "Ate everything"
+    }
+  },
+  "water": {
+    "label": "Water",
+    "marks": {
+      "1": "Barely any",
+      "2": "Drank little",
+      "3": "Normal",
+      "4": "Drank plenty",
+      "5": "A lot"
+    }
+  },
+  "sleep": {
+    "label": "Sleep",
+    "marks": {
+      "1": "Much more",
+      "2": "More than usual",
+      "3": "Normal",
+      "4": "Less than usual",
+      "5": "Much less"
+    }
+  },
+  "activity": {
+    "label": "Energy & activity",
+    "marks": {
+      "1": "Lethargic",
+      "2": "Low energy",
+      "3": "Normal",
+      "4": "Active",
+      "5": "Very active"
+    }
+  },
+  "stool": {
+    "label": "Stool",
+    "normal": "Normal",
+    "different": "Different",
+    "notObserved": "Not observed",
+    "detailsTitle": "What did you observe?",
+    "soft": "Soft",
+    "hard": "Hard",
+    "blood": "Blood",
+    "mucus": "Mucus",
+    "colorChange": "Color change",
+    "parasites": "Parasites"
+  },
+  "urine": {
+    "label": "Urine",
+    "normal": "Normal",
+    "different": "Different",
+    "notObserved": "Not observed",
+    "detailsTitle": "What did you observe?",
+    "increasedFrequency": "More frequent",
+    "decreasedFrequency": "Less frequent",
+    "colorChange": "Color change",
+    "blood": "Blood",
+    "straining": "Straining"
+  },
+  "behavior": {
+    "label": "Behavior",
+    "marks": {
+      "1": "Very different",
+      "2": "Slightly different",
+      "3": "Normal",
+      "4": "Quite normal",
+      "5": "Perfect"
+    }
+  },
+  "freeNote": {
+    "label": "Anything different today?",
+    "placeholder": "Describe any additional observations...",
+    "helperText": "Optional — anything that caught your attention."
+  },
+  "submit": "Save check-in",
+  "saving": "Saving...",
+  "summary": {
+    "title": "Day summary",
+    "scoreLabel": "Day score",
+    "band": {
+      "high": "Great",
+      "medium": "Monitor",
+      "low": "Concerning"
+    },
+    "message": {
+      "high": "{{name}} had a great day! Keep up the daily observation.",
+      "medium": "OK day. Keep an eye on a few categories that need attention.",
+      "low": "Several variations today. If this persists, consider consulting your vet."
+    },
+    "trendTitle": "Last 7 days",
+    "noHistory": "This is the first check-in!",
+    "guidesHint": "Check the Signs Guide to understand what to observe.",
+    "newCheckin": "Next check-in tomorrow"
+  },
+  "errors": {
+    "save": "Could not save the check-in. Please try again.",
+    "load": "Could not load data. Please try again."
+  }
+}
