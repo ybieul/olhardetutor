@@ -10,7 +10,9 @@ primeira classe, não um extra.
 - PROIBIDO hardcoding de qualquer valor visual (cor, fonte, tamanho,
   espaçamento, raio, sombra). Tudo vem de `src/config/theme/`.
 - PROIBIDO texto literal na interface. Todo texto vem de `src/i18n/locales`
-  via `useTranslation()`. Nem uma palavra hardcoded.
+  via `useTranslation()`. Nem uma palavra hardcoded. Mensagens de erro
+  (inclusive as do Supabase Auth) passam por um mapeamento para
+  `errors.json` — nunca exibir `error.message` do SDK direto na tela.
 - PROIBIDO emoji. Usar exclusivamente `lucide-react` para ícones, sempre
   através do wrapper `src/components/ui/Icon.tsx` — nunca `lucide-react`
   direto fora dele.

@@ -161,7 +161,124 @@ Deploy: `supabase functions deploy delete-account`. A `service_role key`
 usada lá dentro é injetada automaticamente pelo Supabase no runtime da
 função — não é configurada manualmente em nenhum `.env`.
 
-## 7. Nunca logar dados sensíveis
+## 7. Autenticação, webhook de compra e e-mails localizados
+
+### Login e recuperação de senha
+
+[`src/features/auth/`](../src/features/auth) tem as telas de login,
+"esqueci minha senha" e definição de senha. Proteção de rota é feita por
+guards em [`src/routes/guards/`](../src/routes/guards) — `RequireAuth`
+(sem login → `/login`), `RequireGuest` (logado não pode ver `/login`) e
+`PetGate` (logado sem pet → `/onboarding`; logado com pet → `/home`).
+
+O "esqueci minha senha" não chama `supabase.auth.resetPasswordForEmail()`
+direto — passa pela Edge Function `request-password-reset`, para que o
+e-mail saia com **nosso** template localizado (não o template padrão do
+Supabase) e para aplicar rate limit.
+
+### Webhook da Kirvano
+
+[`supabase/functions/kirvano-webhook/`](../supabase/functions/kirvano-webhook)
+recebe o evento `SALE_APPROVED`:
+
+1. Valida o segredo do webhook (`KIRVANO_WEBHOOK_SECRET`, comparado contra
+   o campo `token` do corpo ou um header) — sem isso, `401`.
+2. Infere `locale`/`country` do comprador nesta ordem: campo explícito no
+   payload (se algum dia existir) → DDI do telefone (`+55`/`+1`) → domínio
+   do e-mail (`.br`) → fallback configurável
+   (`KIRVANO_DEFAULT_LOCALE`/`KIRVANO_DEFAULT_COUNTRY`). A documentação
+   pública da Kirvano não lista um campo de país/idioma no payload — essa
+   cadeia de fallback existe exatamente por isso.
+3. Cria o usuário no Supabase Auth com senha temporária aleatória
+   (`email_confirm: true` — a compra já é a confirmação) e a linha em
+   `profiles` com `locale`/`country`.
+4. Dispara o e-mail de boas-vindas no idioma correto, com o link de
+   definição de senha (via `auth.admin.generateLink`).
+5. **Idempotência:** a tabela `webhook_events` (migration
+   `20260722050001`) guarda `(source, external_id)` — antes de fazer
+   qualquer coisa, a função checa se esse `sale_id` já foi processado; se
+   sim, retorna `200 { duplicate: true }` sem repetir nada. O registro só
+   é gravado **depois** que tudo deu certo, então uma tentativa que falhou
+   no meio do caminho pode ser reprocessada por um novo retry da Kirvano
+   em vez de ficar presa como "já processada". Como proteção adicional, a
+   própria unicidade do e-mail em `auth.users` impede duas contas para o
+   mesmo comprador mesmo em uma corrida concorrente.
+
+**Nota de transparência:** a Kirvano não publica um schema JSON completo
+nem o mecanismo exato de assinatura do webhook (headers vs. campo no
+corpo) em sua documentação pública. A implementação aqui segue a
+descrição textual disponível (evento, `customer.{name,email,phone_number}`,
+`sale_id`, um "Token" de autenticação) e trata o segredo de forma
+defensiva (aceita tanto no corpo quanto em headers comuns). Ajustar
+`kirvano-webhook/index.ts` é esperado assim que houver acesso a um
+payload real de produção.
+
+### Sistema de e-mails localizados
+
+[`supabase/functions/_shared/email/`](../supabase/functions/_shared/email)
+é o núcleo compartilhado, na mesma filosofia do i18n do front-end:
+
+- `templates/pt-BR/*.json` e `templates/en/*.json` — conteúdo (assunto,
+  título, corpo, texto do botão, rodapé) **fora** da lógica, um arquivo
+  por idioma por tipo de e-mail (`welcome`, `passwordReset`).
+- `layout.ts` — o HTML compartilhado (cores da marca, botão, rodapé); não
+  duplicado por idioma.
+- `renderTemplate.ts` — interpola `{{variavel}}` no conteúdo já
+  localizado e monta o HTML final.
+- `provider.ts` — envio plugável via `EMAIL_PROVIDER`: `log` (padrão,
+  apenas loga — seguro antes de existir uma chave real) ou `resend`
+  (precisa de `RESEND_API_KEY` e `EMAIL_FROM_ADDRESS`). O SMTP do
+  Supabase pode ser adicionado aqui depois como mais uma opção.
+
+`kirvano-webhook` e `request-password-reset` importam esse módulo
+diretamente (mesmo processo, sem chamada HTTP extra). A Edge Function
+[`send-email`](../supabase/functions/send-email) expõe a mesma lógica
+como endpoint HTTP independente, protegido por `service_role`, para casos
+futuros que queiram disparar um e-mail fora desse fluxo (ex.: um lembrete
+agendado).
+
+### Rate limiting
+
+`request-password-reset` limita a 3 pedidos por e-mail a cada 15 minutos
+(tabela `password_reset_attempts`, migration `20260722050002`). O limite é
+checado e a tentativa é sempre registrada, mesmo quando a conta não
+existe ou o pedido será bloqueado — é exatamente esse registro
+incondicional que faz o limite valer. A resposta é idêntica em qualquer
+caso (conta existe, não existe, ou está no limite) para não permitir
+enumeração de e-mails cadastrados.
+
+### Simulando o webhook manualmente
+
+Sem Docker disponível neste ambiente (ver seção 2), a forma de validar
+o fluxo é simular a chamada com `curl` uma vez a função estiver
+implantada:
+
+```bash
+curl -X POST "$SUPABASE_URL/functions/v1/kirvano-webhook" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "event": "SALE_APPROVED",
+    "sale_id": "sale_br_001",
+    "token": "SEU_KIRVANO_WEBHOOK_SECRET",
+    "customer": { "name": "Maria Silva", "email": "maria@exemplo.com.br", "phone_number": "+5511999999999" }
+  }'
+
+curl -X POST "$SUPABASE_URL/functions/v1/kirvano-webhook" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "event": "SALE_APPROVED",
+    "sale_id": "sale_us_001",
+    "token": "SEU_KIRVANO_WEBHOOK_SECRET",
+    "customer": { "name": "John Smith", "email": "john@example.com", "phone_number": "+15551234567" }
+  }'
+```
+
+O primeiro deve resultar em `locale: "pt-BR"` (pelo DDI +55) e o segundo
+em `locale: "en"` (pelo DDI +1). Reenviar o mesmo corpo (mesmo `sale_id`)
+uma segunda vez deve retornar `{ "duplicate": true }` em vez de criar
+outra conta.
+
+## 8. Nunca logar dados sensíveis
 
 Nenhuma função de acesso a dados neste projeto loga o corpo de
 requests/responses. Ao adicionar logging no futuro (analytics, Sentry,
@@ -169,7 +286,7 @@ etc.), nunca inclua `free_note`, `description`, nomes de pets/tutores ou
 qualquer PII no payload do log — logue apenas identificadores técnicos
 (ex.: `pet_id`, código de erro) quando fizer sentido para debugging.
 
-## 8. Honestidade sobre limites
+## 9. Honestidade sobre limites
 
 Nenhum sistema é 100% impenetrável. O que este documento descreve são as
 camadas de proteção padrão da indústria — RLS no banco, sanitização de

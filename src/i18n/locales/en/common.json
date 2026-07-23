@@ -21,6 +21,9 @@
   "actions": {
     "close": "Close"
   },
+  "status": {
+    "loading": "Loading…"
+  },
   "placeholder": {
     "comingSoon": "Coming soon",
     "notFound": "Page not found"

@@ -1,0 +1,7 @@
+{
+  "subject": "Welcome to Olhar de Tutor, {{name}}!",
+  "heading": "Your account is ready",
+  "body": "Hi {{name}}! Your purchase was approved and your Olhar de Tutor account has been created. To get started, set your password by clicking the button below.",
+  "cta": "Set my password",
+  "footer": "If you didn't make this purchase, you can ignore this email or contact our support team."
+}

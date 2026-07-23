@@ -1,0 +1,12 @@
+{
+  "auth": {
+    "invalidCredentials": "Incorrect email or password.",
+    "emailNotConfirmed": "Confirm your email before signing in.",
+    "userNotFound": "We couldn't find an account with that email.",
+    "weakPassword": "Password is too short. Use at least 8 characters.",
+    "tooManyRequests": "Too many attempts. Try again in a few minutes.",
+    "sessionExpired": "Your session expired. Please sign in again.",
+    "linkExpired": "This link has expired or was already used. Request a new one.",
+    "generic": "Something went wrong. Please try again."
+  }
+}

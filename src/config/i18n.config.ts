@@ -18,6 +18,7 @@ export const LANGUAGE_STORAGE_KEY = 'olhar-de-tutor:language';
 export const I18N_NAMESPACES = [
   'common',
   'auth',
+  'errors',
   'onboarding',
   'home',
   'checkin',

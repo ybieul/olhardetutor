@@ -1,0 +1,7 @@
+{
+  "subject": "Bem-vindo(a) ao Olhar de Tutor, {{name}}!",
+  "heading": "Sua conta está pronta",
+  "body": "Olá, {{name}}! Sua compra foi aprovada e sua conta no Olhar de Tutor já foi criada. Para começar, defina sua senha clicando no botão abaixo.",
+  "cta": "Definir minha senha",
+  "footer": "Se você não fez essa compra, ignore este e-mail ou entre em contato com nosso suporte."
+}

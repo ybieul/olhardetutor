@@ -12,6 +12,7 @@ import {
 
 import ptBRCommon from './locales/pt-BR/common.json';
 import ptBRAuth from './locales/pt-BR/auth.json';
+import ptBRErrors from './locales/pt-BR/errors.json';
 import ptBROnboarding from './locales/pt-BR/onboarding.json';
 import ptBRHome from './locales/pt-BR/home.json';
 import ptBRCheckin from './locales/pt-BR/checkin.json';
@@ -22,6 +23,7 @@ import ptBRDev from './locales/pt-BR/dev.json';
 
 import enCommon from './locales/en/common.json';
 import enAuth from './locales/en/auth.json';
+import enErrors from './locales/en/errors.json';
 import enOnboarding from './locales/en/onboarding.json';
 import enHome from './locales/en/home.json';
 import enCheckin from './locales/en/checkin.json';
@@ -34,6 +36,7 @@ const resources = {
   'pt-BR': {
     common: ptBRCommon,
     auth: ptBRAuth,
+    errors: ptBRErrors,
     onboarding: ptBROnboarding,
     home: ptBRHome,
     checkin: ptBRCheckin,
@@ -45,6 +48,7 @@ const resources = {
   en: {
     common: enCommon,
     auth: enAuth,
+    errors: enErrors,
     onboarding: enOnboarding,
     home: enHome,
     checkin: enCheckin,
