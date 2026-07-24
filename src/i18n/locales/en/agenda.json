@@ -1,1 +1,38 @@
-{}
+{
+  "title": "Agenda",
+  "addEvent": "Add event",
+  "empty": "No events recorded",
+  "emptyHint": "Record your pet's vaccines, consultations and treatments.",
+  "close": "Close",
+  "form": {
+    "titleAdd": "New event",
+    "titleEdit": "Edit event",
+    "type": "Type",
+    "date": "Date",
+    "nextDate": "Next date (optional)",
+    "description": "Notes (optional)",
+    "reminder": "Enable reminder",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete event",
+    "confirmDelete": "Delete this event?",
+    "confirmDeleteHint": "This action cannot be undone.",
+    "confirmDeleteYes": "Yes, delete",
+    "errors": {
+      "typeRequired": "Select the event type",
+      "dateRequired": "Enter the event date"
+    }
+  },
+  "types": {
+    "vaccine": "Vaccine",
+    "deworming": "Deworming",
+    "flea": "Flea treatment",
+    "consultation": "Consultation",
+    "medication": "Medication"
+  },
+  "status": {
+    "expired": "Overdue",
+    "soon": "Coming soon",
+    "upcoming": "Upcoming"
+  }
+}

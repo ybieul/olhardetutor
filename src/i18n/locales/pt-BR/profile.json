@@ -1,1 +1,96 @@
-{}
+{
+  "title": "Perfil",
+  "pet": {
+    "title": "Meu pet",
+    "ageMonths": "{{count}} mês",
+    "ageMonths_other": "{{count}} meses",
+    "ageYears": "{{count}} ano",
+    "ageYears_other": "{{count}} anos",
+    "ageYearsMonths": "{{years}} ano e {{months}} mês",
+    "ageYearsMonths_other": "{{years}} anos e {{months}} meses",
+    "species": {
+      "dog": "Cão",
+      "cat": "Gato"
+    },
+    "noPhoto": "Sem foto",
+    "noName": "Pet"
+  },
+  "weight": {
+    "title": "Histórico de peso",
+    "current": "Peso atual",
+    "unit": "kg",
+    "addButton": "Registrar novo peso",
+    "noData": "Nenhum peso registrado",
+    "form": {
+      "title": "Registrar peso",
+      "weight": "Peso (kg)",
+      "date": "Data",
+      "save": "Salvar",
+      "cancel": "Cancelar",
+      "close": "Fechar",
+      "errors": {
+        "weightRequired": "Informe o peso",
+        "weightInvalid": "O peso deve ser um número maior que zero",
+        "dateRequired": "Informe a data"
+      }
+    }
+  },
+  "streak": {
+    "title": "Sequência de check-ins",
+    "days": "{{count}} dia consecutivo",
+    "days_other": "{{count}} dias consecutivos",
+    "noStreak": "Faça seu primeiro check-in hoje!"
+  },
+  "preferences": {
+    "title": "Preferências",
+    "language": "Idioma",
+    "languageOptions": {
+      "pt-BR": "Português",
+      "en": "English"
+    },
+    "audioSpeed": "Velocidade do áudio",
+    "audioSpeeds": {
+      "slow": "Lenta",
+      "normal": "Normal",
+      "fast": "Rápida"
+    },
+    "notifications": "Notificações",
+    "notificationsHint": "Em breve"
+  },
+  "privacy": {
+    "title": "Privacidade",
+    "export": "Exportar ficha de saúde",
+    "exportHint": "Baixe um PDF com todos os dados do seu pet.",
+    "exportLoading": "Gerando PDF...",
+    "deleteAccount": "Excluir conta",
+    "deleteHint": "Esta ação é irreversível. Todos os dados serão removidos permanentemente.",
+    "confirmDelete": "Excluir conta?",
+    "confirmDeleteMessage": "Tem certeza? Todo o histórico e registros do seu pet serão permanentemente excluídos.",
+    "confirmButton": "Excluir permanentemente",
+    "cancelButton": "Cancelar",
+    "close": "Fechar"
+  },
+  "pdf": {
+    "title": "Ficha de saúde",
+    "generatedAt": "Gerado em",
+    "petInfo": "Dados do pet",
+    "name": "Nome",
+    "species": "Espécie",
+    "breed": "Raça",
+    "age": "Idade",
+    "weightHistory": "Histórico de peso",
+    "date": "Data",
+    "weightKg": "Peso (kg)",
+    "healthEvents": "Eventos de saúde",
+    "type": "Tipo",
+    "nextDate": "Próxima data",
+    "description": "Observações",
+    "checkins": "Check-ins (últimos 30 dias)",
+    "score": "Pontuação",
+    "noWeight": "Sem registros de peso",
+    "noEvents": "Sem eventos registrados",
+    "noCheckins": "Sem check-ins nos últimos 30 dias",
+    "disclaimer": "Este documento é educativo e de acompanhamento preventivo. Não substitui consulta, diagnóstico ou tratamento veterinário.",
+    "page": "Página"
+  }
+}

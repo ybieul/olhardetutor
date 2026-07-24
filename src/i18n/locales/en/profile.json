@@ -1,1 +1,96 @@
-{}
+{
+  "title": "Profile",
+  "pet": {
+    "title": "My pet",
+    "ageMonths": "{{count}} month",
+    "ageMonths_other": "{{count}} months",
+    "ageYears": "{{count}} year",
+    "ageYears_other": "{{count}} years",
+    "ageYearsMonths": "{{years}} year and {{months}} month",
+    "ageYearsMonths_other": "{{years}} years and {{months}} months",
+    "species": {
+      "dog": "Dog",
+      "cat": "Cat"
+    },
+    "noPhoto": "No photo",
+    "noName": "Pet"
+  },
+  "weight": {
+    "title": "Weight history",
+    "current": "Current weight",
+    "unit": "kg",
+    "addButton": "Record new weight",
+    "noData": "No weight records",
+    "form": {
+      "title": "Record weight",
+      "weight": "Weight (kg)",
+      "date": "Date",
+      "save": "Save",
+      "cancel": "Cancel",
+      "close": "Close",
+      "errors": {
+        "weightRequired": "Enter the weight",
+        "weightInvalid": "Weight must be a number greater than zero",
+        "dateRequired": "Enter the date"
+      }
+    }
+  },
+  "streak": {
+    "title": "Check-in streak",
+    "days": "{{count}} consecutive day",
+    "days_other": "{{count}} consecutive days",
+    "noStreak": "Do your first check-in today!"
+  },
+  "preferences": {
+    "title": "Preferences",
+    "language": "Language",
+    "languageOptions": {
+      "pt-BR": "Português",
+      "en": "English"
+    },
+    "audioSpeed": "Audio speed",
+    "audioSpeeds": {
+      "slow": "Slow",
+      "normal": "Normal",
+      "fast": "Fast"
+    },
+    "notifications": "Notifications",
+    "notificationsHint": "Coming soon"
+  },
+  "privacy": {
+    "title": "Privacy",
+    "export": "Export health sheet",
+    "exportHint": "Download a PDF with all your pet's data.",
+    "exportLoading": "Generating PDF...",
+    "deleteAccount": "Delete account",
+    "deleteHint": "This action is irreversible. All data will be permanently removed.",
+    "confirmDelete": "Delete account?",
+    "confirmDeleteMessage": "Are you sure? All your pet's history and records will be permanently deleted.",
+    "confirmButton": "Delete permanently",
+    "cancelButton": "Cancel",
+    "close": "Close"
+  },
+  "pdf": {
+    "title": "Health sheet",
+    "generatedAt": "Generated at",
+    "petInfo": "Pet information",
+    "name": "Name",
+    "species": "Species",
+    "breed": "Breed",
+    "age": "Age",
+    "weightHistory": "Weight history",
+    "date": "Date",
+    "weightKg": "Weight (kg)",
+    "healthEvents": "Health events",
+    "type": "Type",
+    "nextDate": "Next date",
+    "description": "Notes",
+    "checkins": "Check-ins (last 30 days)",
+    "score": "Score",
+    "noWeight": "No weight records",
+    "noEvents": "No events recorded",
+    "noCheckins": "No check-ins in the last 30 days",
+    "disclaimer": "This document is for educational and preventive health monitoring purposes. It does not replace veterinary consultation, diagnosis or treatment.",
+    "page": "Page"
+  }
+}

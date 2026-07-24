@@ -1,1 +1,38 @@
-{}
+{
+  "title": "Agenda",
+  "addEvent": "Adicionar evento",
+  "empty": "Nenhum evento registrado",
+  "emptyHint": "Registre vacinas, consultas e tratamentos do seu pet.",
+  "close": "Fechar",
+  "form": {
+    "titleAdd": "Novo evento",
+    "titleEdit": "Editar evento",
+    "type": "Tipo",
+    "date": "Data",
+    "nextDate": "Próxima data (opcional)",
+    "description": "Observações (opcional)",
+    "reminder": "Ativar lembrete",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "delete": "Excluir evento",
+    "confirmDelete": "Excluir este evento?",
+    "confirmDeleteHint": "Esta ação não pode ser desfeita.",
+    "confirmDeleteYes": "Sim, excluir",
+    "errors": {
+      "typeRequired": "Selecione o tipo do evento",
+      "dateRequired": "Informe a data do evento"
+    }
+  },
+  "types": {
+    "vaccine": "Vacina",
+    "deworming": "Vermífugo",
+    "flea": "Antipulgas",
+    "consultation": "Consulta",
+    "medication": "Medicação"
+  },
+  "status": {
+    "expired": "Atrasado",
+    "soon": "Em breve",
+    "upcoming": "Futuro"
+  }
+}
