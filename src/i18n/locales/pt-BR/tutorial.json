@@ -1,0 +1,98 @@
+{
+  "buttons": {
+    "next": "Próximo",
+    "back": "Voltar",
+    "skip": "Pular",
+    "finish": "Concluir"
+  },
+  "tours": {
+    "home": {
+      "steps": {
+        "welcome": {
+          "title": "Bem-vindo ao Olhar de Tutor!",
+          "body": "Este app ajuda você a acompanhar a saúde do seu pet de forma preventiva. Vamos fazer um tour rápido?"
+        },
+        "nav": {
+          "title": "Navegação",
+          "body": "Use este menu para navegar entre as seções do app."
+        },
+        "checkin": {
+          "title": "Check-in diário",
+          "body": "Registre observações sobre seu pet todos os dias. Isso cria um histórico que ajuda a identificar mudanças."
+        },
+        "ready": {
+          "title": "Tudo pronto!",
+          "body": "Explore cada seção para cuidar melhor do seu pet. Você pode reiniciar este tour nas preferências do perfil."
+        }
+      }
+    },
+    "checkin": {
+      "steps": {
+        "header": {
+          "title": "Check-in diário",
+          "body": "Aqui você registra as observações do dia sobre alimentação, sono, comportamento e mais."
+        },
+        "form": {
+          "title": "Preencha com calma",
+          "body": "Use os controles deslizantes para indicar como seu pet se saiu em cada categoria. Não é um diagnóstico — é um registro."
+        },
+        "submit": {
+          "title": "Salvar o check-in",
+          "body": "Ao salvar, o app calcula uma pontuação do dia e registra no histórico para você acompanhar tendências."
+        }
+      }
+    },
+    "guides": {
+      "steps": {
+        "header": {
+          "title": "Guias educacionais",
+          "body": "Conteúdo educativo para você entender melhor o comportamento e a saúde do seu pet."
+        },
+        "list": {
+          "title": "Módulos disponíveis",
+          "body": "Toque em qualquer módulo para ler. Há também uma lista de sinais de alerta para situações de emergência."
+        },
+        "vet": {
+          "title": "Consulte sempre um veterinário",
+          "body": "Este app não substitui a consulta veterinária. Use este atalho para encontrar um veterinário perto de você."
+        }
+      }
+    },
+    "agenda": {
+      "steps": {
+        "header": {
+          "title": "Agenda de saúde",
+          "body": "Registre vacinas, vermífugos, consultas e outros eventos de saúde do seu pet."
+        },
+        "addBtn": {
+          "title": "Adicionar evento",
+          "body": "Toque aqui para cadastrar um novo evento com data, tipo e lembrete opcional."
+        },
+        "colors": {
+          "title": "Cores por urgência",
+          "body": "Eventos atrasados aparecem em vermelho, os próximos 7 dias em âmbar, e futuros em cinza."
+        }
+      }
+    },
+    "profile": {
+      "steps": {
+        "petCard": {
+          "title": "Seu pet",
+          "body": "Informações do pet: nome, espécie, raça e idade calculada automaticamente."
+        },
+        "streak": {
+          "title": "Sequência de check-ins",
+          "body": "Quantos dias consecutivos você fez check-in. Manter a sequência ajuda a identificar padrões."
+        },
+        "weight": {
+          "title": "Histórico de peso",
+          "body": "Registre o peso do seu pet periodicamente. O gráfico mostra a evolução ao longo do tempo."
+        },
+        "preferences": {
+          "title": "Preferências",
+          "body": "Ajuste o idioma e a velocidade do áudio. Você também pode exportar os dados ou excluir a conta."
+        }
+      }
+    }
+  }
+}

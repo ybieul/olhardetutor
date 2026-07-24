@@ -34,6 +34,7 @@ export function BottomNav() {
   return (
     <>
       <nav
+        data-tour="bottom-nav"
         aria-label={t('nav.label')}
         className="fixed inset-x-0 bottom-0 z-sticky flex justify-around border-t border-neutral-200 bg-white sm:hidden"
       >

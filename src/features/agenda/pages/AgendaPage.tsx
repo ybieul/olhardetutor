@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 import { Button } from '@/components/ui/Button';
 import { Skeleton } from '@/components/ui/Skeleton';
+import { TourOverlay } from '@/components/tutorial/TourOverlay';
 import { useHealthEvents } from '../hooks/useHealthEvents';
 import { EventCard } from '../components/EventCard';
 import { EventForm } from '../components/EventForm';
@@ -33,11 +34,15 @@ export function AgendaPage() {
 
   return (
     <div className="flex flex-col gap-16">
-      <div className="flex items-center justify-between">
+      <TourOverlay tourId="agenda" />
+
+      <div data-tour="agenda-header" className="flex items-center justify-between">
         <h1 className="text-xl font-bold text-foreground">{t('title')}</h1>
-        <Button variant="primary" size="sm" icon={Plus} onClick={openAdd}>
-          {t('addEvent')}
-        </Button>
+        <span data-tour="agenda-add-btn">
+          <Button variant="primary" size="sm" icon={Plus} onClick={openAdd}>
+            {t('addEvent')}
+          </Button>
+        </span>
       </div>
 
       {loading ? (

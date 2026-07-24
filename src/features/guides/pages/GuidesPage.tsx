@@ -17,6 +17,7 @@ import { Card } from '@/components/ui/Card';
 import { Icon } from '@/components/ui/Icon';
 import { GUIDE_MODULE_IDS, type GuideModuleId } from '@/config/app.config';
 import { Button } from '@/components/ui/Button';
+import { TourOverlay } from '@/components/tutorial/TourOverlay';
 import { AlertSignsList } from '../components/AlertSignsList';
 import { GuideCard } from '../components/GuideCard';
 import { GuideDetail } from '../components/GuideDetail';
@@ -40,6 +41,8 @@ export function GuidesPage() {
 
   return (
     <div className="flex flex-col gap-16">
+      <TourOverlay tourId="guides" />
+
       {/* Legal disclaimer — always at top */}
       <div className="rounded-md border border-primary-100 bg-primary-50 px-12 py-10">
         <p className="text-xs text-primary-700">{t('disclaimer')}</p>
@@ -47,9 +50,9 @@ export function GuidesPage() {
 
       {view.type === 'list' && (
         <>
-          <h1 className="text-xl font-bold text-foreground">{t('title')}</h1>
+          <h1 data-tour="guides-header" className="text-xl font-bold text-foreground">{t('title')}</h1>
 
-          <div className="flex flex-col gap-10">
+          <div data-tour="guides-list" className="flex flex-col gap-10">
             {GUIDE_MODULE_IDS.map((id) => (
               <GuideCard
                 key={id}
@@ -84,7 +87,7 @@ export function GuidesPage() {
             </button>
           </div>
 
-          <div className="pt-8">
+          <div data-tour="vet-button" className="pt-8">
             <VetButton />
           </div>
         </>

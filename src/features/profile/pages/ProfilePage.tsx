@@ -7,7 +7,10 @@ import { Card } from '@/components/ui/Card';
 import { Skeleton } from '@/components/ui/Skeleton';
 import { deleteAccount } from '@/lib/supabase/queries/account';
 import { exportHealthSheet } from '@/lib/pdf/exportHealthSheet';
+import { TourOverlay } from '@/components/tutorial/TourOverlay';
 import { useProfileData } from '../hooks/useProfileData';
+import { InstallCard } from '../components/InstallCard';
+import { NotificationCard } from '../components/NotificationCard';
 import { PetCard } from '../components/PetCard';
 import { WeightChart } from '../components/WeightChart';
 import { WeightForm } from '../components/WeightForm';
@@ -43,26 +46,39 @@ export function ProfilePage() {
 
   return (
     <div className="flex flex-col gap-16">
+      <TourOverlay tourId="profile" />
+
       <h1 className="text-xl font-bold text-foreground">{t('title')}</h1>
 
-      <PetCard pet={pet} photoUrl={photoUrl} />
+      <InstallCard />
+      <NotificationCard />
 
-      <StreakCard checkins={recentCheckins} />
+      <div data-tour="profile-pet-card">
+        <PetCard pet={pet} photoUrl={photoUrl} />
+      </div>
+
+      <div data-tour="profile-streak">
+        <StreakCard checkins={recentCheckins} />
+      </div>
 
       {/* Weight section */}
-      <Card padding="md" shadow="sm">
-        <div className="flex flex-col gap-12">
-          <div className="flex items-center justify-between">
-            <p className="font-semibold text-foreground">{t('weight.title')}</p>
-            <Button variant="secondary" size="sm" icon={Plus} onClick={() => setShowWeightForm(true)}>
-              {t('weight.addButton')}
-            </Button>
+      <div data-tour="profile-weight">
+        <Card padding="md" shadow="sm">
+          <div className="flex flex-col gap-12">
+            <div className="flex items-center justify-between">
+              <p className="font-semibold text-foreground">{t('weight.title')}</p>
+              <Button variant="secondary" size="sm" icon={Plus} onClick={() => setShowWeightForm(true)}>
+                {t('weight.addButton')}
+              </Button>
+            </div>
+            <WeightChart entries={weightHistory} />
           </div>
-          <WeightChart entries={weightHistory} />
-        </div>
-      </Card>
+        </Card>
+      </div>
 
-      <PreferencesSection />
+      <div data-tour="profile-preferences">
+        <PreferencesSection />
+      </div>
 
       <PrivacySection
         data={{ pet, photoUrl, weightHistory, recentCheckins, healthEvents }}

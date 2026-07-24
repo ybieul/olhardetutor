@@ -1,11 +1,13 @@
 import { useTranslation } from 'react-i18next';
 
 import { Card } from '@/components/ui/Card';
+import { Button } from '@/components/ui/Button';
 import { SegmentedControl } from '@/components/ui/SegmentedControl';
 import type { SupportedLanguage } from '@/config/i18n.config';
 import { cn } from '@/lib/cn';
 import { useLanguageStore } from '@/store/useLanguageStore';
 import { TTS_SPEEDS, useTtsStore, type TtsSpeed } from '@/store/useTtsStore';
+import { useTourStore } from '@/store/useTourStore';
 
 const LANGUAGE_OPTIONS: Array<{ value: SupportedLanguage; label: string }> = [
   { value: 'pt-BR', label: 'Português' },
@@ -16,6 +18,7 @@ export function PreferencesSection() {
   const { t } = useTranslation('profile');
   const { language, setLanguage } = useLanguageStore();
   const { rate, setRate } = useTtsStore();
+  const resetAllTours = useTourStore((s) => s.resetAllTours);
 
   const speedLabels: Record<TtsSpeed, string> = {
     0.7: t('preferences.audioSpeeds.slow'),
@@ -59,9 +62,12 @@ export function PreferencesSection() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-4">
-          <p className="text-sm font-medium text-neutral-500">{t('preferences.notifications')}</p>
-          <p className="text-xs text-neutral-400">{t('preferences.notificationsHint')}</p>
+        <div className="flex flex-col gap-8">
+          <p className="text-sm font-medium text-neutral-500">{t('preferences.restartTours')}</p>
+          <p className="text-xs text-neutral-400">{t('preferences.restartToursHint')}</p>
+          <Button variant="secondary" size="sm" onClick={() => void resetAllTours()}>
+            {t('preferences.restartTours')}
+          </Button>
         </div>
       </div>
     </Card>

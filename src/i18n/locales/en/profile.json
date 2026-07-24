@@ -55,7 +55,9 @@
       "fast": "Fast"
     },
     "notifications": "Notifications",
-    "notificationsHint": "Coming soon"
+    "notificationsHint": "Coming soon",
+    "restartTours": "Restart tours",
+    "restartToursHint": "Show the tutorial again for each screen"
   },
   "privacy": {
     "title": "Privacy",

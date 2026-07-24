@@ -43,7 +43,7 @@ export function CheckinForm() {
     [1, 2, 3, 4, 5].map((v) => ({ value: v, label: t(`${ns}.marks.${v}`) }));
 
   return (
-    <div className="flex flex-col gap-12">
+    <div data-tour="checkin-form" className="flex flex-col gap-12">
       {/* 1. Alimentação */}
       <Section icon={Utensils} label={t('feeding.label')}>
         <Slider

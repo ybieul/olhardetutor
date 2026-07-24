@@ -1,0 +1,98 @@
+{
+  "buttons": {
+    "next": "Next",
+    "back": "Back",
+    "skip": "Skip",
+    "finish": "Done"
+  },
+  "tours": {
+    "home": {
+      "steps": {
+        "welcome": {
+          "title": "Welcome to Olhar de Tutor!",
+          "body": "This app helps you proactively track your pet's health. Want a quick tour?"
+        },
+        "nav": {
+          "title": "Navigation",
+          "body": "Use this menu to navigate between sections of the app."
+        },
+        "checkin": {
+          "title": "Daily check-in",
+          "body": "Record daily observations about your pet. This builds a history that helps detect changes."
+        },
+        "ready": {
+          "title": "You're all set!",
+          "body": "Explore each section to better care for your pet. You can restart this tour in Profile preferences."
+        }
+      }
+    },
+    "checkin": {
+      "steps": {
+        "header": {
+          "title": "Daily check-in",
+          "body": "Here you record daily observations about feeding, sleep, behavior, and more."
+        },
+        "form": {
+          "title": "Take your time",
+          "body": "Use the sliders to indicate how your pet did in each category. This is a record, not a diagnosis."
+        },
+        "submit": {
+          "title": "Save the check-in",
+          "body": "Saving calculates a daily score and logs it in your history so you can track trends."
+        }
+      }
+    },
+    "guides": {
+      "steps": {
+        "header": {
+          "title": "Educational guides",
+          "body": "Educational content to help you better understand your pet's behavior and health."
+        },
+        "list": {
+          "title": "Available modules",
+          "body": "Tap any module to read it. There's also an alert signs list for emergency situations."
+        },
+        "vet": {
+          "title": "Always consult a vet",
+          "body": "This app does not replace veterinary care. Use this shortcut to find a vet near you."
+        }
+      }
+    },
+    "agenda": {
+      "steps": {
+        "header": {
+          "title": "Health agenda",
+          "body": "Track vaccines, dewormings, consultations, and other health events for your pet."
+        },
+        "addBtn": {
+          "title": "Add an event",
+          "body": "Tap here to add a new event with a date, type, and optional reminder."
+        },
+        "colors": {
+          "title": "Color-coded urgency",
+          "body": "Overdue events appear in red, the next 7 days in amber, and future ones in gray."
+        }
+      }
+    },
+    "profile": {
+      "steps": {
+        "petCard": {
+          "title": "Your pet",
+          "body": "Your pet's info: name, species, breed, and auto-calculated age."
+        },
+        "streak": {
+          "title": "Check-in streak",
+          "body": "How many consecutive days you've done a check-in. Keeping it going helps spot patterns."
+        },
+        "weight": {
+          "title": "Weight history",
+          "body": "Record your pet's weight periodically. The chart shows how it evolves over time."
+        },
+        "preferences": {
+          "title": "Preferences",
+          "body": "Adjust language and audio speed. You can also export your data or delete your account."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "install": {
+    "title": "Instalar aplicativo",
+    "description": "Adicione o Olhar de Tutor à sua tela inicial para acesso rápido, mesmo sem internet.",
+    "button": "Instalar",
+    "ios": {
+      "title": "Instalar no iPhone / iPad",
+      "step1": "Toque em Compartilhar",
+      "step2": "Selecione \"Adicionar à Tela de Início\""
+    }
+  },
+  "update": {
+    "available": "Nova versão disponível",
+    "refresh": "Atualizar agora",
+    "dismiss": "Depois"
+  },
+  "notifications": {
+    "title": "Notificações",
+    "description": "Receba lembretes de check-in e avisos de eventos de saúde no idioma do seu dispositivo.",
+    "enable": "Ativar notificações",
+    "disable": "Desativar notificações",
+    "enabled": "Notificações ativas",
+    "blocked": "Notificações bloqueadas no navegador. Habilite nas configurações do dispositivo.",
+    "unavailable": "Notificações não disponíveis neste dispositivo.",
+    "permissionDenied": "Permissão negada. Habilite nas configurações do navegador."
+  }
+}

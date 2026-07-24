@@ -5,6 +5,7 @@ import { AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Skeleton } from '@/components/ui/Skeleton';
 import { Icon } from '@/components/ui/Icon';
+import { TourOverlay } from '@/components/tutorial/TourOverlay';
 import { upsertCheckin, type Checkin } from '@/lib/supabase/queries/checkins';
 import { computeDayScore, deriveStoolStatus, deriveUrineStatus } from '../scoring';
 import { useCheckin } from '../hooks/useCheckin';
@@ -102,8 +103,10 @@ export function CheckinPage() {
 
   return (
     <div className="flex flex-col gap-16 pb-24">
+      <TourOverlay tourId="checkin" />
+
       {/* Header */}
-      <div>
+      <div data-tour="checkin-header">
         <h1 className="text-xl font-semibold text-foreground-light">{t('title')}</h1>
         <p className="mt-2 text-sm text-neutral-500">{t('subtitle', { name: petName })}</p>
       </div>
@@ -121,9 +124,11 @@ export function CheckinPage() {
         </p>
       ) : null}
 
-      <Button fullWidth loading={saving} onClick={handleSave}>
-        {saving ? t('saving') : t('submit')}
-      </Button>
+      <div data-tour="checkin-submit">
+        <Button fullWidth loading={saving} onClick={handleSave}>
+          {saving ? t('saving') : t('submit')}
+        </Button>
+      </div>
     </div>
   );
 }

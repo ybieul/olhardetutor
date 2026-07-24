@@ -25,6 +25,8 @@ export const I18N_NAMESPACES = [
   'guides',
   'agenda',
   'profile',
+  'tutorial',
+  'pwa',
   'dev',
 ] as const;
 

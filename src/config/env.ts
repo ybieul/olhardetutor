@@ -53,4 +53,5 @@ export const env = {
   mode: import.meta.env.MODE,
   isProduction: import.meta.env.PROD,
   isDevelopment: import.meta.env.DEV,
+  vapidPublicKey: import.meta.env.VITE_VAPID_PUBLIC_KEY ?? null,
 } as const;

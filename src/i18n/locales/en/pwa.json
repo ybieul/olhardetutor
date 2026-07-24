@@ -1,0 +1,27 @@
+{
+  "install": {
+    "title": "Install app",
+    "description": "Add Olhar de Tutor to your home screen for quick access, even without internet.",
+    "button": "Install",
+    "ios": {
+      "title": "Install on iPhone / iPad",
+      "step1": "Tap Share",
+      "step2": "Select \"Add to Home Screen\""
+    }
+  },
+  "update": {
+    "available": "New version available",
+    "refresh": "Update now",
+    "dismiss": "Later"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "description": "Receive check-in reminders and health event alerts in your device language.",
+    "enable": "Enable notifications",
+    "disable": "Disable notifications",
+    "enabled": "Notifications active",
+    "blocked": "Notifications blocked in browser. Enable them in your device settings.",
+    "unavailable": "Notifications not available on this device.",
+    "permissionDenied": "Permission denied. Enable in your browser settings."
+  }
+}
