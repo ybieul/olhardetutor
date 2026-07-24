@@ -1,1 +1,278 @@
-{}
+{
+  "disclaimer": "This app is educational and for preventive monitoring. It does not replace veterinary consultation, diagnosis, or treatment.",
+  "title": "Guides",
+  "backToList": "All guides",
+  "modules": {
+    "silence": {
+      "title": "The Deceiving Silence",
+      "tagline": "Why pets hide pain",
+      "sections": [
+        {
+          "id": "why",
+          "title": "The Evolutionary Legacy",
+          "body": "Dogs and cats descend from predators whose main survival mechanism was to never show weakness. Exposing pain or illness in the wild attracted threats and social isolation. Millennia of domestication have not erased this instinct. A pet may be suffering while still eating, playing, and greeting you with enthusiasm.",
+          "species": "all"
+        },
+        {
+          "id": "dog-signs",
+          "title": "How Dogs Show Discomfort",
+          "body": "Dogs are more expressive than cats but still mask subtle pain. Watch for: repeatedly licking a body part with no visible injury, changing posture when sitting or lying down, reduced enthusiasm for walks or play, or seeking less social contact. Vocalization — whimpering, crying — usually appears only when the pain is already significant.",
+          "species": "dog"
+        },
+        {
+          "id": "cat-signs",
+          "title": "How Cats Show Discomfort",
+          "body": "Cats are masters of disguise. Subtle signs many owners miss: hiding in places they never used before, stopping use of the litter box or preferring to stay near it, excessive grooming of one specific spot, or reduced grooming overall. Important: cats can purr when in pain. Purring does not guarantee well-being.",
+          "species": "cat"
+        },
+        {
+          "id": "observe",
+          "title": "What You Can Do",
+          "body": "You do not need to be a vet to protect your pet. You need to know them well enough to notice when something changed. The daily check-in creates exactly that: a history of what is normal for YOUR pet, not for pets in general. Variations that would be invisible become visible patterns in the history.",
+          "species": "all"
+        }
+      ]
+    },
+    "dna": {
+      "title": "Your Pet's DNA",
+      "tagline": "The baseline only you can build",
+      "sections": [
+        {
+          "id": "no-standard",
+          "title": "There Is No Standard Pet",
+          "body": "A Border Collie that barks with excitement before eating may be perfectly healthy. A Ragdoll that sleeps 18 hours a day too. What matters is not the absolute behavior, but the deviation from your pet's own pattern. This is what we call behavioral DNA — the unique baseline of your animal.",
+          "species": "all"
+        },
+        {
+          "id": "first-days",
+          "title": "The First Days of Logging",
+          "body": "The first logs in the app serve to calibrate this baseline. As you record your pet's habitual behavior, the app learns what is normal for them. This process transforms isolated observations into comparable data — the foundation of everything that follows.",
+          "species": "all"
+        },
+        {
+          "id": "eight-points",
+          "title": "The 8 Observation Points",
+          "body": "The check-in covers 8 aspects: feeding, hydration, sleep, energy and activity, stool, urine, general behavior, and free notes. Each captures a different body system. Together, they form a daily portrait of your pet's health — a portrait no single test can replace.",
+          "species": "all"
+        },
+        {
+          "id": "why-matters",
+          "title": "Why This Changes Everything",
+          "body": "Vets repeat it: what is most missing in appointments is longitudinal data. Knowing your pet ate less this week, not just today, changes the differential diagnosis. With the app's history, you arrive at the appointment with concrete data from 7, 15, or 30 days — and that accelerates diagnosis.",
+          "species": "all"
+        }
+      ]
+    },
+    "checkin": {
+      "title": "The 2-Minute Check-in",
+      "tagline": "How to log; what each category means",
+      "sections": [
+        {
+          "id": "why-2min",
+          "title": "Why 2 Minutes",
+          "body": "The check-in was designed to be short enough to become a habit. Done at the same time every day — preferably in the evening, when you have already spent the day with your pet — it takes less than 2 minutes start to finish. Consistency is worth more than perfection in each entry.",
+          "species": "all"
+        },
+        {
+          "id": "feeding-water",
+          "title": "Feeding and Hydration",
+          "body": "These two items measure whether consumption is within your pet's pattern. One day with less appetite may be irrelevant. Three consecutive days is already information. Water is especially important: persistent changes in intake are among the first signs of kidney, endocrine, and other problems.",
+          "species": "all"
+        },
+        {
+          "id": "sleep-energy",
+          "title": "Sleep, Energy, and Activity",
+          "body": "Sleep is evaluated on a 5-point scale where the center represents the normal pattern — both too much and too little sleep can be significant. Energy captures the general disposition of the day. On cold, rainy days or after intense exercise, variations are expected and normal.",
+          "species": "all"
+        },
+        {
+          "id": "stool-urine",
+          "title": "Stool and Urine",
+          "body": "These are the most direct indicators of the digestive and urinary tract. In the check-in you record whether things are normal, different, or not observed — with optional details when different. Do not worry if you did not observe: that is also valid information, especially for pets that go outside.",
+          "species": "all"
+        },
+        {
+          "id": "behavior-note",
+          "title": "Behavior and Free Note",
+          "body": "Behavior assesses whether the pet acted as usual — played, interacted, and showed affection at their normal level. The Anything different today? field is the most valuable of all: here you record anything that does not fit the categories. A repeated sneeze, a paw the pet tends too often, unusual restlessness. This detail could be the most important at your next appointment.",
+          "species": "all"
+        }
+      ]
+    },
+    "changes": {
+      "title": "Reading the Changes",
+      "tagline": "Normal variation versus warning signs",
+      "sections": [
+        {
+          "id": "persistence",
+          "title": "The Persistence Rule",
+          "body": "Not every change is a warning sign. Pets are less active on cold days, eat less after intense exercise, sleep more when there is noise or stress at home. The difference between normal variation and a signal lies in persistence. A change for 1 day: observe. For 3 days: pay attention. For 5 days or more: consult your vet.",
+          "species": "all"
+        },
+        {
+          "id": "dog-variations",
+          "title": "Common Variations in Dogs",
+          "body": "Dogs are strongly influenced by routine and their owner's mood. Environmental changes — moving house, a baby arriving, travel, a new pet in the family — cause temporary behavioral variations that can last several days. Special attention to combinations: less energy and less appetite together warrant evaluation even when each signal seems mild in isolation.",
+          "species": "dog"
+        },
+        {
+          "id": "cat-variations",
+          "title": "Common Variations in Cats",
+          "body": "Cats handle routine changes less well and are more susceptible to environmental stress. Pay special attention to: stopping or reducing litter box use, hiding in new places, increased nighttime vocalization, and changes in grooming. Unlike dogs, cats rarely show pain directly — subtle behavioral changes are their signals.",
+          "species": "cat"
+        },
+        {
+          "id": "combinations",
+          "title": "Combinations That Call for Attention",
+          "body": "Isolated signs are rarely urgent. Combinations are more significant: less appetite with lethargy, increased thirst with excessive urination, vomiting with water refusal. The app's history makes it easier to see these combinations over time — what would be invisible day by day becomes clear in a week of data.",
+          "species": "all"
+        }
+      ]
+    },
+    "history": {
+      "title": "The History That Saves",
+      "tagline": "How to use the data when it matters most",
+      "sections": [
+        {
+          "id": "what-reveals",
+          "title": "What the History Reveals",
+          "body": "A single check-in tells little. A week of check-ins tells a story. A month tells a chapter. Patterns that would be imperceptible day by day — energy gradually declining, appetite varying cyclically, behavior changing after a vaccine — become obvious when you look at the full history.",
+          "species": "all"
+        },
+        {
+          "id": "bring-to-vet",
+          "title": "What to Bring to the Appointment",
+          "body": "At your next appointment, you can show the vet the daily score trend, the categories with the most frequent variation, and the free notes from the period. This transforms I felt she was acting strange into 15 days of data showing a gradual reduction in energy and appetite. That level of information speeds up diagnosis.",
+          "species": "all"
+        },
+        {
+          "id": "you-can-speak",
+          "title": "Your Pet Cannot Speak. You Can.",
+          "body": "Your pet cannot describe what they feel, for how long, or with what intensity. But you can — with concrete data. That is the most valuable gift you can give your vet and your pet. Olhar de Tutor does not diagnose. It records. And recording is what you can do better than any technology.",
+          "species": "all"
+        }
+      ]
+    },
+    "when": {
+      "title": "When to Act",
+      "tagline": "Three levels, three different responses",
+      "sections": [
+        {
+          "id": "observe",
+          "title": "Observe Level",
+          "body": "Something changed but may be temporary. Keep the daily log normally. Use the free note field to describe what caught your attention. If it normalizes in 24 to 48 hours, great. If it persists, move up a level. There is no lost point for observing without acting — you are right on track.",
+          "species": "all"
+        },
+        {
+          "id": "attention",
+          "title": "Attention Level",
+          "body": "The change persists or is more significant. It is not necessarily an emergency, but it deserves a call or message to your trusted vet. Many clinics accept triage by message, phone, or app. Bring the data from the last few days — it will help the vet decide if the appointment is urgent or can be scheduled normally.",
+          "species": "all"
+        },
+        {
+          "id": "urgent",
+          "title": "Urgency Level",
+          "body": "Go to the vet today. Signs that cannot wait: total water refusal for more than 24 hours, visible difficulty breathing, blood in stool or urine, loss of consciousness or seizure, very distended abdomen, pale or blue gums. In these cases, do not wait for the next scheduled appointment.",
+          "species": "all"
+        },
+        {
+          "id": "golden-rule",
+          "title": "The Golden Rule",
+          "body": "When in doubt, go. The cost of an unnecessary appointment is infinitely less than the cost of a disease diagnosed too late. You have the data. You have the history. Use them. The button below opens Google Maps searching for vets near you.",
+          "species": "all"
+        }
+      ]
+    }
+  },
+  "alertSigns": {
+    "title": "Alert Signs Guide",
+    "subtitle": "Signs by category and urgency level",
+    "levels": {
+      "observe": "Observe",
+      "attention": "Attention",
+      "urgent": "Urgent"
+    },
+    "categories": {
+      "feeding": {
+        "title": "Feeding and Water",
+        "signals": [
+          { "text": "Eating less than usual for 1 day", "level": "observe", "species": "all" },
+          { "text": "Drinking less water than usual", "level": "observe", "species": "all" },
+          { "text": "Refusing food for more than 24 hours", "level": "attention", "species": "all" },
+          { "text": "Drinking much more water than normal for 2 or more days", "level": "attention", "species": "all" },
+          { "text": "Total water refusal for more than 24 hours", "level": "urgent", "species": "all" },
+          { "text": "Visibly distended stomach after eating", "level": "urgent", "species": "dog" }
+        ]
+      },
+      "sleep": {
+        "title": "Sleep and Energy",
+        "signals": [
+          { "text": "Quieter or sleepier than usual for 1 day", "level": "observe", "species": "all" },
+          { "text": "Less interest in playing or interacting", "level": "observe", "species": "all" },
+          { "text": "Lethargy persisting for 2 or more days", "level": "attention", "species": "all" },
+          { "text": "Difficulty getting up or moving normally", "level": "attention", "species": "all" },
+          { "text": "Unable to move or stand up", "level": "urgent", "species": "all" }
+        ]
+      },
+      "stool": {
+        "title": "Stool",
+        "signals": [
+          { "text": "Softer or harder stool than usual for 1 day", "level": "observe", "species": "all" },
+          { "text": "No bowel movement for 1 day (may be normal for some pets)", "level": "observe", "species": "all" },
+          { "text": "Soft stool for 2 or more days or with mucus", "level": "attention", "species": "all" },
+          { "text": "No bowel movement for 2 or more days with visible straining", "level": "attention", "species": "all" },
+          { "text": "Visible blood in stool", "level": "urgent", "species": "all" },
+          { "text": "Intense straining without being able to defecate", "level": "urgent", "species": "cat" },
+          { "text": "Vomiting with tense abdomen and no bowel movements", "level": "urgent", "species": "dog" }
+        ]
+      },
+      "urine": {
+        "title": "Urine",
+        "signals": [
+          { "text": "Urinating slightly more or less than usual", "level": "observe", "species": "all" },
+          { "text": "Significantly increased urination frequency for 2 or more days", "level": "attention", "species": "all" },
+          { "text": "Urine with a color other than light yellow to amber", "level": "attention", "species": "all" },
+          { "text": "Visible blood in urine", "level": "urgent", "species": "all" },
+          { "text": "Straining to urinate with no output", "level": "urgent", "species": "all" },
+          { "text": "Male cat that has not urinated for more than 12 hours", "level": "urgent", "species": "cat" }
+        ]
+      },
+      "behavior": {
+        "title": "Behavior",
+        "signals": [
+          { "text": "Less interactive or playful than usual", "level": "observe", "species": "all" },
+          { "text": "Mild change in mood or temperament for 1 day", "level": "observe", "species": "all" },
+          { "text": "Hiding or avoiding contact for 2 or more days", "level": "attention", "species": "all" },
+          { "text": "Repeatedly licking or biting a body part", "level": "attention", "species": "all" },
+          { "text": "Excessive vocalization without apparent reason", "level": "attention", "species": "dog" },
+          { "text": "Disorientation, loss of balance, or seizure", "level": "urgent", "species": "all" }
+        ]
+      },
+      "physical": {
+        "title": "Physical Appearance",
+        "signals": [
+          { "text": "Coat slightly duller or less shiny", "level": "observe", "species": "all" },
+          { "text": "Reduced grooming for 1 day", "level": "observe", "species": "cat" },
+          { "text": "Eye discharge, redness, or excessive tearing", "level": "attention", "species": "all" },
+          { "text": "Faster breathing than normal while at rest", "level": "attention", "species": "all" },
+          { "text": "Visible difficulty breathing — labored breathing", "level": "urgent", "species": "all" },
+          { "text": "Pale, blue, or yellow gums", "level": "urgent", "species": "all" },
+          { "text": "Sudden swelling anywhere on the body", "level": "urgent", "species": "all" }
+        ]
+      }
+    }
+  },
+  "audio": {
+    "listen": "Listen",
+    "pause": "Pause",
+    "resume": "Resume",
+    "speed": "Speed",
+    "speedSlow": "Slow",
+    "speedNormal": "Normal",
+    "speedFast": "Fast",
+    "notAvailable": "Text-to-speech is not available in this browser.",
+    "voiceFallback": "English voice not found. Using the device's default voice."
+  },
+  "vetButton": "Find nearest vet",
+  "vetButtonHint": "Opens Google Maps searching for vets near you."
+}

@@ -49,3 +49,13 @@ export const CHECKIN_SCORE_WEIGHTS = {
   urine: 0.10,
   behavior: 0.15,
 } as const;
+
+/** Ordered list of guide module IDs — controls display order in the list. */
+export const GUIDE_MODULE_IDS = ['silence', 'dna', 'checkin', 'changes', 'history', 'when'] as const;
+export type GuideModuleId = (typeof GUIDE_MODULE_IDS)[number];
+
+/** Google Maps search URLs for "vet near me", keyed by supported language. */
+export const VET_SEARCH_URLS: Record<'pt-BR' | 'en', string> = {
+  'pt-BR': 'https://www.google.com/maps/search/veterin%C3%A1ria+perto+de+mim',
+  en: 'https://www.google.com/maps/search/veterinarian+near+me',
+};

@@ -1,1 +1,278 @@
-{}
+{
+  "disclaimer": "Este app é educativo e de acompanhamento preventivo. Não substitui consulta, diagnóstico ou tratamento veterinário.",
+  "title": "Guias",
+  "backToList": "Todos os guias",
+  "modules": {
+    "silence": {
+      "title": "O Silêncio que Engana",
+      "tagline": "Por que pets escondem dor",
+      "sections": [
+        {
+          "id": "why",
+          "title": "A Herança Evolutiva",
+          "body": "Cães e gatos descendem de predadores cujo principal mecanismo de sobrevivência era não demonstrar fraqueza. Expor dor ou doença em ambiente selvagem atraía ameaças e isolamento social. Milênios de domesticação não apagaram esse instinto. Um pet pode estar sofrendo e ainda assim comer, brincar e te saudar com entusiasmo.",
+          "species": "all"
+        },
+        {
+          "id": "dog-signs",
+          "title": "Como Cães Mostram Desconforto",
+          "body": "Cães são mais expressivos que gatos, mas ainda mascaram dor sutil. Preste atenção a: lamber repetidamente uma parte do corpo sem lesão visível, mudar a postura ao sentar ou deitar, reduzir o entusiasmo para passear ou brincar, ou buscar menos contato social. Vocalização — gemidos e choro — geralmente aparece apenas quando a dor já é intensa.",
+          "species": "dog"
+        },
+        {
+          "id": "cat-signs",
+          "title": "Como Gatos Mostram Desconforto",
+          "body": "Gatos são mestres do disfarce. Sinais sutis que muitos tutores perdem: isolar-se em locais onde nunca ficava, parar de usar a caixinha de areia ou preferir ficar próximo a ela, grooming excessivo em um ponto específico ou grooming reduzido de forma geral. Importante: gatos podem ronronar quando estão com dor. Ronronar não garante bem-estar.",
+          "species": "cat"
+        },
+        {
+          "id": "observe",
+          "title": "O Que Você Pode Fazer",
+          "body": "Você não precisa ser veterinário para proteger seu pet. Precisa conhecê-lo bem o suficiente para notar quando algo mudou. O check-in diário cria exatamente isso: um histórico do que é normal para o SEU pet, não para pets em geral. Variações que seriam invisíveis viram padrões visíveis no histórico.",
+          "species": "all"
+        }
+      ]
+    },
+    "dna": {
+      "title": "O DNA do Seu Pet",
+      "tagline": "A linha de base que só você pode construir",
+      "sections": [
+        {
+          "id": "no-standard",
+          "title": "Não Existe Pet Padrão",
+          "body": "Um Border Collie que late de entusiasmo antes de comer pode ser completamente saudável. Um Ragdoll que dorme 18 horas por dia também. O que importa não é o comportamento absoluto, mas o desvio em relação ao padrão do seu pet. É isso que chamamos de DNA comportamental — a linha de base única do seu animal.",
+          "species": "all"
+        },
+        {
+          "id": "first-days",
+          "title": "Os Primeiros Dias de Registro",
+          "body": "Os primeiros registros do app servem para calibrar essa linha de base. Enquanto você registra o comportamento habitual do seu pet, o app aprende o que é normal para ele. Esse processo transforma observações isoladas em dados comparáveis — a fundação de tudo que vem depois.",
+          "species": "all"
+        },
+        {
+          "id": "eight-points",
+          "title": "Os 8 Pontos de Observação",
+          "body": "O check-in cobre 8 aspectos: alimentação, hidratação, sono, energia e atividade, fezes, urina, comportamento geral e observações livres. Cada um captura um sistema diferente do organismo. Juntos, formam um retrato diário da saúde do seu pet — um retrato que nenhum exame pontual consegue substituir.",
+          "species": "all"
+        },
+        {
+          "id": "why-matters",
+          "title": "Por Que Isso Muda Tudo",
+          "body": "Veterinários repetem: o que mais falta numa consulta são dados longitudinais. Saber que seu pet comeu menos esta semana, não só hoje, muda o diagnóstico diferencial. Com o histórico do app, você chega à consulta com dados concretos de 7, 15 ou 30 dias — e isso acelera o diagnóstico.",
+          "species": "all"
+        }
+      ]
+    },
+    "checkin": {
+      "title": "O Check-in em 2 Minutos",
+      "tagline": "Como registrar; o que cada categoria significa",
+      "sections": [
+        {
+          "id": "why-2min",
+          "title": "Por Que 2 Minutos",
+          "body": "O check-in foi projetado para ser curto o suficiente para virar hábito. Feito no mesmo horário todo dia — preferencialmente à noite, quando você já passou o dia com seu pet — leva menos de 2 minutos do início ao fim. A consistência vale mais do que a perfeição em cada registro.",
+          "species": "all"
+        },
+        {
+          "id": "feeding-water",
+          "title": "Alimentação e Hidratação",
+          "body": "Esses dois itens medem se o consumo está no padrão do seu pet. Um dia com menos apetite pode ser irrelevante. Três dias seguidos já é informação. A água é especialmente importante: alterações persistentes na ingestão são um dos primeiros sinais de problemas renais, endócrinos e outros.",
+          "species": "all"
+        },
+        {
+          "id": "sleep-energy",
+          "title": "Sono, Energia e Atividade",
+          "body": "O sono é avaliado numa escala de 5 pontos onde o centro representa o padrão normal — tanto dormir demais quanto dormir de menos pode ser significativo. A energia capta a disposição geral do dia. Em dias frios, chuvosos ou após exercício intenso, variações são esperadas e normais.",
+          "species": "all"
+        },
+        {
+          "id": "stool-urine",
+          "title": "Fezes e Urina",
+          "body": "São os indicadores mais diretos do trato digestivo e urinário. No check-in você registra se está normal, diferente ou não observado — com detalhes opcionais quando diferente. Não se preocupe se não observou: isso também é uma informação válida, especialmente para pets que fazem necessidades fora de casa.",
+          "species": "all"
+        },
+        {
+          "id": "behavior-note",
+          "title": "Comportamento e Nota Livre",
+          "body": "O comportamento avalia se o pet agiu como de costume — brincou, interagiu e demonstrou afeto no padrão habitual. O campo Algo diferente hoje? é o mais valioso de todos: aqui você registra qualquer coisa fora das categorias. Um espirro repetido, uma pata que o pet cuida demais, uma inquietação incomum. Esse detalhe pode ser o mais importante na próxima consulta.",
+          "species": "all"
+        }
+      ]
+    },
+    "changes": {
+      "title": "Lendo as Mudanças",
+      "tagline": "Variação normal versus sinal de alerta",
+      "sections": [
+        {
+          "id": "persistence",
+          "title": "A Regra da Persistência",
+          "body": "Nem toda mudança é um sinal de alerta. Pets ficam menos ativos em dias frios, comem menos após exercício intenso, dormem mais quando há barulho ou estresse na casa. A diferença entre variação normal e sinal está na persistência. Uma mudança por 1 dia: observe. Por 3 dias: preste atenção. Por 5 dias ou mais: consulte seu veterinário.",
+          "species": "all"
+        },
+        {
+          "id": "dog-variations",
+          "title": "Variações Comuns em Cães",
+          "body": "Cães são fortemente influenciados pela rotina e pelo humor do tutor. Mudanças no ambiente — mudança de casa, chegada de um bebê, viagem, novo pet na família — causam variações comportamentais temporárias que podem durar vários dias. Atenção especial para combinações: menos energia e menos apetite juntos merecem avaliação mesmo que cada sinal isolado parecesse leve.",
+          "species": "dog"
+        },
+        {
+          "id": "cat-variations",
+          "title": "Variações Comuns em Gatos",
+          "body": "Gatos toleram menos bem mudanças de rotina e são mais suscetíveis ao estresse ambiental. Preste atenção especial a: parar ou reduzir o uso da caixinha de areia, esconder-se em locais novos, vocalização noturna aumentada e alterações no grooming. Diferente dos cães, gatos raramente demonstram dor de forma direta — mudanças comportamentais sutis são os seus sinais.",
+          "species": "cat"
+        },
+        {
+          "id": "combinations",
+          "title": "Combinações que Pedem Atenção",
+          "body": "Sinais isolados raramente são urgentes. Combinações são mais significativas: menos apetite com letargia, aumento de sede com urina em excesso, vômito com recusa de água. O histórico do app facilita ver essas combinações ao longo do tempo — o que seria invisível dia a dia fica claro numa semana de dados.",
+          "species": "all"
+        }
+      ]
+    },
+    "history": {
+      "title": "O Histórico que Salva",
+      "tagline": "Como usar os dados na hora que mais importa",
+      "sections": [
+        {
+          "id": "what-reveals",
+          "title": "O Que o Histórico Revela",
+          "body": "Um check-in isolado conta pouco. Uma semana de check-ins conta uma história. Um mês conta um capítulo. Padrões que seriam imperceptíveis no dia a dia — energia decaindo gradualmente, apetite variando ciclicamente, comportamento mudando após uma vacina — ficam óbvios quando você olha o histórico completo.",
+          "species": "all"
+        },
+        {
+          "id": "bring-to-vet",
+          "title": "O Que Levar à Consulta",
+          "body": "Na sua próxima consulta, você pode mostrar ao veterinário a evolução do score diário, as categorias com variação mais frequente e as notas livres do período. Isso transforma achei que ela estava estranha em 15 dias de dados mostrando redução gradual de energia e apetite. Esse nível de informação acelera o diagnóstico.",
+          "species": "all"
+        },
+        {
+          "id": "you-can-speak",
+          "title": "O Pet Não Pode Falar. Você Pode.",
+          "body": "Seu pet não pode descrever o que sente, por quanto tempo, ou com que intensidade. Mas você pode — com dados concretos. Esse é o presente mais valioso que você pode dar ao veterinário e ao seu pet. O Olhar de Tutor não diagnostica. Ele registra. E registrar é o que você pode fazer melhor do que qualquer tecnologia.",
+          "species": "all"
+        }
+      ]
+    },
+    "when": {
+      "title": "Quando Agir",
+      "tagline": "Três níveis, três respostas diferentes",
+      "sections": [
+        {
+          "id": "observe",
+          "title": "Nível Observar",
+          "body": "Algo mudou mas pode ser temporário. Mantenha o registro diário normalmente. Use o campo de nota livre para descrever o que chamou sua atenção. Se normalizar em 24 a 48 horas, ótimo. Se persistir, sobe de nível. Não existe ponto perdido por observar sem agir — você está exatamente no caminho certo.",
+          "species": "all"
+        },
+        {
+          "id": "attention",
+          "title": "Nível Atenção",
+          "body": "A mudança persiste ou é mais significativa. Não é necessariamente uma emergência, mas merece uma ligação ou mensagem para seu veterinário de confiança. Muitas clínicas aceitam triagens por WhatsApp, telefone ou app. Leve os dados dos últimos dias — eles vão ajudar o veterinário a decidir se a consulta é urgente ou pode ser agendada normalmente.",
+          "species": "all"
+        },
+        {
+          "id": "urgent",
+          "title": "Nível Urgência",
+          "body": "Vá ao veterinário hoje. Sinais que não esperam: recusa total de água por mais de 24 horas, dificuldade respiratória visível, sangue nas fezes ou urina, perda de consciência ou convulsão, abdome muito distendido, gengivas pálidas ou azuladas. Nesses casos, não espere pela próxima consulta agendada.",
+          "species": "all"
+        },
+        {
+          "id": "golden-rule",
+          "title": "A Regra de Ouro",
+          "body": "Em caso de dúvida, vá. O custo de uma consulta desnecessária é infinitamente menor do que o custo de uma doença diagnosticada tarde. Você tem os dados. Você tem o histórico. Use-os. O botão abaixo abre o Google Maps com busca por veterinários próximos a você.",
+          "species": "all"
+        }
+      ]
+    }
+  },
+  "alertSigns": {
+    "title": "Guia de Sinais de Alerta",
+    "subtitle": "Sinais por categoria e nível de urgência",
+    "levels": {
+      "observe": "Observar",
+      "attention": "Atenção",
+      "urgent": "Urgente"
+    },
+    "categories": {
+      "feeding": {
+        "title": "Alimentação e Água",
+        "signals": [
+          { "text": "Come menos do que o habitual por 1 dia", "level": "observe", "species": "all" },
+          { "text": "Bebe menos água que o habitual", "level": "observe", "species": "all" },
+          { "text": "Recusa alimentos por mais de 24 horas", "level": "attention", "species": "all" },
+          { "text": "Bebe muito mais água que o normal por 2 dias ou mais", "level": "attention", "species": "all" },
+          { "text": "Recusa total de água por mais de 24 horas", "level": "urgent", "species": "all" },
+          { "text": "Estômago visivelmente distendido após comer", "level": "urgent", "species": "dog" }
+        ]
+      },
+      "sleep": {
+        "title": "Sono e Energia",
+        "signals": [
+          { "text": "Mais quieto ou sonolento que o habitual por 1 dia", "level": "observe", "species": "all" },
+          { "text": "Menos interesse em brincar ou interagir", "level": "observe", "species": "all" },
+          { "text": "Letargia que persiste por 2 dias ou mais", "level": "attention", "species": "all" },
+          { "text": "Dificuldade para se levantar ou se mover normalmente", "level": "attention", "species": "all" },
+          { "text": "Incapaz de se mover ou se levantar", "level": "urgent", "species": "all" }
+        ]
+      },
+      "stool": {
+        "title": "Fezes",
+        "signals": [
+          { "text": "Fezes mais moles ou mais duras que o habitual por 1 dia", "level": "observe", "species": "all" },
+          { "text": "Não defecar em 1 dia (pode ser normal dependendo do pet)", "level": "observe", "species": "all" },
+          { "text": "Fezes moles por 2 dias ou mais, ou com presença de muco", "level": "attention", "species": "all" },
+          { "text": "Ausência de fezes por 2 dias ou mais com esforço visível", "level": "attention", "species": "all" },
+          { "text": "Sangue visível nas fezes", "level": "urgent", "species": "all" },
+          { "text": "Esforço intenso sem conseguir defecar", "level": "urgent", "species": "cat" },
+          { "text": "Vômito associado a abdome tenso e ausência de fezes", "level": "urgent", "species": "dog" }
+        ]
+      },
+      "urine": {
+        "title": "Urina",
+        "signals": [
+          { "text": "Urinando um pouco mais ou menos que o habitual", "level": "observe", "species": "all" },
+          { "text": "Frequência de urinar muito aumentada por 2 dias ou mais", "level": "attention", "species": "all" },
+          { "text": "Urina com cor diferente do amarelo claro a âmbar", "level": "attention", "species": "all" },
+          { "text": "Sangue visível na urina", "level": "urgent", "species": "all" },
+          { "text": "Esforço para urinar sem produzir saída", "level": "urgent", "species": "all" },
+          { "text": "Gato macho sem urinar há mais de 12 horas", "level": "urgent", "species": "cat" }
+        ]
+      },
+      "behavior": {
+        "title": "Comportamento",
+        "signals": [
+          { "text": "Menos interativo ou brincalhão que o habitual", "level": "observe", "species": "all" },
+          { "text": "Mudança leve de humor ou temperamento por 1 dia", "level": "observe", "species": "all" },
+          { "text": "Esconde-se ou evita contato por 2 dias ou mais", "level": "attention", "species": "all" },
+          { "text": "Lame ou morde repetidamente uma parte do corpo", "level": "attention", "species": "all" },
+          { "text": "Vocalização excessiva sem motivo aparente", "level": "attention", "species": "dog" },
+          { "text": "Desorientação, perda de equilíbrio ou convulsão", "level": "urgent", "species": "all" }
+        ]
+      },
+      "physical": {
+        "title": "Aparência Física",
+        "signals": [
+          { "text": "Pelagem levemente mais opaca ou com menos brilho", "level": "observe", "species": "all" },
+          { "text": "Redução no grooming por 1 dia", "level": "observe", "species": "cat" },
+          { "text": "Olhos com secreção, vermelhidão ou lacrimejamento excessivo", "level": "attention", "species": "all" },
+          { "text": "Respiração mais rápida que o normal em repouso", "level": "attention", "species": "all" },
+          { "text": "Dificuldade respiratória visível — respiração com esforço", "level": "urgent", "species": "all" },
+          { "text": "Gengivas pálidas, azuladas ou amareladas", "level": "urgent", "species": "all" },
+          { "text": "Inchaço súbito em qualquer parte do corpo", "level": "urgent", "species": "all" }
+        ]
+      }
+    }
+  },
+  "audio": {
+    "listen": "Ouvir",
+    "pause": "Pausar",
+    "resume": "Retomar",
+    "speed": "Velocidade",
+    "speedSlow": "Lenta",
+    "speedNormal": "Normal",
+    "speedFast": "Rápida",
+    "notAvailable": "Leitura em voz alta não disponível neste navegador.",
+    "voiceFallback": "Voz em português não encontrada. Usando a voz padrão do dispositivo."
+  },
+  "vetButton": "Encontrar veterinária próxima",
+  "vetButtonHint": "Abre o Google Maps com busca por veterinários próximos."
+}
