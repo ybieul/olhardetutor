@@ -1,5 +1,3 @@
-import jsPDF from 'jspdf';
-
 import i18n from '@/i18n';
 import type { Checkin } from '@/lib/supabase/queries/checkins';
 import type { HealthEvent } from '@/lib/supabase/queries/healthEvents';
@@ -55,6 +53,7 @@ const LINE_H = 7;
 const SECTION_GAP = 10;
 
 export async function exportHealthSheet({ pet, photoUrl, weightHistory, healthEvents, checkins }: ExportInput): Promise<void> {
+  const { default: jsPDF } = await import('jspdf');
   const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
 
   let y = MARGIN;

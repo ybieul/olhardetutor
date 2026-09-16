@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
+import { colors } from '@/config/theme/colors';
 import type { WeightEntry } from '@/lib/supabase/queries/weightHistory';
 
 const SVG_W = 400;
@@ -56,14 +57,14 @@ export function WeightChart({ entries }: WeightChartProps) {
       <div className="overflow-hidden rounded-lg">
         <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} className="w-full" aria-hidden="true">
           {/* Axes */}
-          <line x1={PAD.left} y1={PAD.top} x2={PAD.left} y2={PAD.top + CHART_H} stroke="#e5e7eb" strokeWidth="1" />
-          <line x1={PAD.left} y1={PAD.top + CHART_H} x2={PAD.left + CHART_W} y2={PAD.top + CHART_H} stroke="#e5e7eb" strokeWidth="1" />
+          <line x1={PAD.left} y1={PAD.top} x2={PAD.left} y2={PAD.top + CHART_H} stroke={colors.neutral[200]} strokeWidth="1" />
+          <line x1={PAD.left} y1={PAD.top + CHART_H} x2={PAD.left + CHART_W} y2={PAD.top + CHART_H} stroke={colors.neutral[200]} strokeWidth="1" />
 
           {/* Y axis labels */}
-          <text x={PAD.left - 4} y={PAD.top + 4} textAnchor="end" fontSize="11" fill="#9ca3af">
+          <text x={PAD.left - 4} y={PAD.top + 4} textAnchor="end" fontSize="11" fill={colors.neutral[400]}>
             {maxW}
           </text>
-          <text x={PAD.left - 4} y={PAD.top + CHART_H} textAnchor="end" fontSize="11" fill="#9ca3af">
+          <text x={PAD.left - 4} y={PAD.top + CHART_H} textAnchor="end" fontSize="11" fill={colors.neutral[400]}>
             {minW}
           </text>
 
@@ -74,30 +75,30 @@ export function WeightChart({ entries }: WeightChartProps) {
               ...entries.map((e, i) => `${toX(i)},${toY(e.weight_kg)}`),
               `${toX(entries.length - 1)},${PAD.top + CHART_H}`,
             ].join(' ')}
-            fill="#fef3c7"
+            fill={colors.warning[100]}
             stroke="none"
           />
 
           {/* Line */}
-          <polyline points={points} fill="none" stroke="#f59e0b" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+          <polyline points={points} fill="none" stroke={colors.warning[500]} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
 
           {/* Data points */}
           {entries.map((e, i) => (
-            <circle key={e.id} cx={toX(i)} cy={toY(e.weight_kg)} r="4" fill="#f59e0b" stroke="white" strokeWidth="2" />
+            <circle key={e.id} cx={toX(i)} cy={toY(e.weight_kg)} r="4" fill={colors.warning[500]} stroke={colors.white} strokeWidth="2" />
           ))}
 
           {/* X axis date labels */}
           {firstDate !== lastDate ? (
             <>
-              <text x={PAD.left} y={SVG_H - 4} textAnchor="start" fontSize="10" fill="#9ca3af">
+              <text x={PAD.left} y={SVG_H - 4} textAnchor="start" fontSize="10" fill={colors.neutral[400]}>
                 {firstDate}
               </text>
-              <text x={PAD.left + CHART_W} y={SVG_H - 4} textAnchor="end" fontSize="10" fill="#9ca3af">
+              <text x={PAD.left + CHART_W} y={SVG_H - 4} textAnchor="end" fontSize="10" fill={colors.neutral[400]}>
                 {lastDate}
               </text>
             </>
           ) : (
-            <text x={PAD.left + CHART_W / 2} y={SVG_H - 4} textAnchor="middle" fontSize="10" fill="#9ca3af">
+            <text x={PAD.left + CHART_W / 2} y={SVG_H - 4} textAnchor="middle" fontSize="10" fill={colors.neutral[400]}>
               {firstDate}
             </text>
           )}

@@ -22,6 +22,12 @@ npm install
 npm run dev
 ```
 
+> O `.npmrc` na raiz define `legacy-peer-deps=true` porque o `i18next`
+> declara `typescript@^5` como peer opcional, e o projeto usa TypeScript
+> `~6.0.2` (versão estável real, não é erro de configuração). Sem essa
+> flag, `npm install` falha em ambiente limpo — inclusive no build da
+> Vercel.
+
 ## Scripts
 
 - `npm run dev` — servidor de desenvolvimento

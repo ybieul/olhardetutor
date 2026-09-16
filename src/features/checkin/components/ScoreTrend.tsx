@@ -1,3 +1,5 @@
+import { colors } from '@/config/theme/colors';
+
 import { getScoreBand } from '../scoring';
 
 type TrendPoint = {
@@ -19,9 +21,9 @@ const N = 7;
 const COL = CHART_W / (N - 1);
 
 const BAND_COLORS = {
-  high: '#22A155',
-  medium: '#F59E0B',
-  low: '#E23B3B',
+  high: colors.success[500],
+  medium: colors.warning[500],
+  low: colors.danger[500],
 } as const;
 
 function scoreToY(score: number): number {
@@ -35,7 +37,7 @@ export function ScoreTrend({ points }: ScoreTrendProps) {
     x: PAD_X + i * COL,
     y: p.score !== null ? scoreToY(p.score) : null,
     score: p.score,
-    color: p.score !== null ? BAND_COLORS[getScoreBand(p.score)] : '#C9C9D4',
+    color: p.score !== null ? BAND_COLORS[getScoreBand(p.score)] : colors.neutral[300],
   }));
 
   // Build polyline path segments — only connect consecutive non-null points
@@ -57,7 +59,7 @@ export function ScoreTrend({ points }: ScoreTrendProps) {
     >
       {/* connector lines */}
       {segments.map((d, i) => (
-        <path key={i} d={d} stroke="#E2E2E8" strokeWidth={2} fill="none" />
+        <path key={i} d={d} stroke={colors.neutral[200]} strokeWidth={2} fill="none" />
       ))}
 
       {/* dots */}

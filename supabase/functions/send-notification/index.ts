@@ -18,8 +18,6 @@
  *   npx web-push generate-vapid-keys
  */
 
-// deno-lint-ignore-file no-explicit-any
-
 import { createClient } from 'npm:@supabase/supabase-js@2';
 import webpush from 'npm:web-push@3';
 
@@ -48,6 +46,13 @@ type Subscription = {
   lang: string;
 };
 
+type EventWithPet = {
+  user_id: string;
+  event_type: string;
+  next_date: string;
+  pets: { name: string } | null;
+};
+
 Deno.serve(async (req: Request) => {
   if (req.method === 'OPTIONS') {
     return new Response('ok', { headers: corsHeaders });
@@ -67,8 +72,8 @@ Deno.serve(async (req: Request) => {
 
   const supabase = createClient(SUPABASE_URL, SERVICE_ROLE_KEY);
 
-  let subscriptions: Subscription[] = [];
-  let payloads: Map<string, object> = new Map();
+  const subscriptions: Subscription[] = [];
+  const payloads: Map<string, object> = new Map();
 
   if (type === 'daily_checkin') {
     // Fetch all active subscriptions
@@ -103,7 +108,8 @@ Deno.serve(async (req: Request) => {
       .from('health_events')
       .select('id, user_id, event_type, next_date, pets(name)')
       .gte('next_date', now.toISOString().slice(0, 10))
-      .lte('next_date', in3Days.toISOString().slice(0, 10));
+      .lte('next_date', in3Days.toISOString().slice(0, 10))
+      .returns<EventWithPet[]>();
 
     if (error) throw error;
 
@@ -116,12 +122,12 @@ Deno.serve(async (req: Request) => {
 
       for (const sub of subs ?? []) {
         const daysUntil = Math.ceil(
-          (new Date(event.next_date as string).getTime() - now.getTime()) / (1000 * 60 * 60 * 24),
+          (new Date(event.next_date).getTime() - now.getTime()) / (1000 * 60 * 60 * 24),
         );
         subscriptions.push({ endpoint: sub.endpoint, p256dh: sub.p256dh, auth: sub.auth, lang: sub.lang });
         payloads.set(sub.endpoint, {
           type: 'health_event',
-          petName: (event.pets as any)?.name ?? 'Pet',
+          petName: event.pets?.name ?? 'Pet',
           eventName: event.event_type,
           daysUntil,
           lang: sub.lang,

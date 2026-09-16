@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/Button';
 import { Skeleton } from '@/components/ui/Skeleton';
 import { Icon } from '@/components/ui/Icon';
 import { TourOverlay } from '@/components/tutorial/TourOverlay';
-import { upsertCheckin, type Checkin } from '@/lib/supabase/queries/checkins';
+import { upsertCheckin } from '@/lib/supabase/queries/checkins';
 import { computeDayScore, deriveStoolStatus, deriveUrineStatus } from '../scoring';
 import { useCheckin } from '../hooks/useCheckin';
 import { useCheckinFormStore } from '../store/useCheckinFormStore';
@@ -15,19 +15,16 @@ import { CheckinSummary } from '../components/CheckinSummary';
 
 export function CheckinPage() {
   const { t } = useTranslation('checkin');
-  const { pet, todayCheckin, history, loading, error } = useCheckin();
+  const { pet, todayCheckin, history, loading, error, applySaved } = useCheckin();
 
   const form = useCheckinFormStore((s) => s.form);
   const reset = useCheckinFormStore((s) => s.reset);
 
-  // Local overrides set after a successful save
-  const [savedCheckin, setSavedCheckin] = useState<Checkin | null>(null);
-  const [savedHistory, setSavedHistory] = useState<Checkin[] | null>(null);
+  // True right after a successful save, so the "already done" reminder
+  // (meant for a check-in found on arrival) doesn't show for one you just submitted.
+  const [justSaved, setJustSaved] = useState(false);
   const [saving, setSaving] = useState(false);
   const [saveError, setSaveError] = useState<string | null>(null);
-
-  const activeCheckin = savedCheckin ?? (todayCheckin === undefined ? undefined : todayCheckin);
-  const activeHistory = savedHistory ?? history;
 
   async function handleSave() {
     if (!pet) return;
@@ -54,9 +51,8 @@ export function CheckinPage() {
         day_score: dayScore,
       });
 
-      const updated = [saved, ...history.filter((c) => c.date !== saved.date)];
-      setSavedCheckin(saved);
-      setSavedHistory(updated);
+      applySaved(saved);
+      setJustSaved(true);
       reset();
     } catch {
       setSaveError(t('errors.save'));
@@ -87,16 +83,16 @@ export function CheckinPage() {
 
   const petName = pet?.name ?? '';
 
-  if (activeCheckin) {
+  if (todayCheckin) {
     return (
       <div className="flex flex-col gap-16">
         <div>
           <h1 className="text-xl font-semibold text-foreground-light">{t('summary.title')}</h1>
-          {activeCheckin === todayCheckin ? (
+          {!justSaved ? (
             <p className="mt-2 text-sm text-neutral-500">{t('alreadyDone.subtitle', { name: petName })}</p>
           ) : null}
         </div>
-        <CheckinSummary checkin={activeCheckin} history={activeHistory} petName={petName} />
+        <CheckinSummary checkin={todayCheckin} history={history} petName={petName} />
       </div>
     );
   }
