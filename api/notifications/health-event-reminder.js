@@ -1,6 +1,7 @@
 /**
  * Vercel cron handler — triggers the health event reminder push notification batch.
- * Scheduled in vercel.json: every day at 08:00 UTC.
+ * Scheduled in vercel.json: every day at 12:00 UTC (≈8am NY, 5am LA, 9am SP —
+ * a fixed-hour compromise across time zones; per-tutor scheduling is a later phase).
  * Proxies to the Supabase Edge Function with the shared NOTIFICATION_SECRET.
  */
 export default async function handler(req, res) {

@@ -47,10 +47,11 @@ type Subscription = {
 };
 
 type EventWithPet = {
-  user_id: string;
-  event_type: string;
+  pet_id: string;
+  type: string;
   next_date: string;
-  pets: { name: string } | null;
+  reminder_enabled: boolean;
+  pets: { user_id: string; name: string } | null;
 };
 
 Deno.serve(async (req: Request) => {
@@ -76,6 +77,8 @@ Deno.serve(async (req: Request) => {
   const payloads: Map<string, object> = new Map();
 
   if (type === 'daily_checkin') {
+    const today = new Date().toISOString().slice(0, 10);
+
     // Fetch all active subscriptions
     const { data, error } = await supabase
       .from('push_subscriptions')
@@ -84,29 +87,41 @@ Deno.serve(async (req: Request) => {
 
     if (error) throw error;
 
-    // For each user, get their pet name
+    // For each user, get their pet and skip anyone who already checked in today
     for (const sub of data ?? []) {
       const { data: pet } = await supabase
         .from('pets')
-        .select('name')
+        .select('id, name')
         .eq('user_id', sub.user_id)
         .maybeSingle();
+
+      if (!pet) continue;
+
+      const { data: todayCheckin } = await supabase
+        .from('checkins')
+        .select('id')
+        .eq('pet_id', pet.id)
+        .eq('date', today)
+        .maybeSingle();
+
+      if (todayCheckin) continue;
 
       subscriptions.push({ endpoint: sub.endpoint, p256dh: sub.p256dh, auth: sub.auth, lang: sub.lang });
       payloads.set(sub.endpoint, {
         type: 'daily_checkin',
-        petName: pet?.name ?? 'Pet',
+        petName: pet.name ?? 'Pet',
         lang: sub.lang,
       });
     }
   } else if (type === 'health_event_reminder') {
-    // Find health events happening in the next 3 days
+    // Find health events happening in the next 3 days, with reminders enabled
     const now = new Date();
     const in3Days = new Date(now.getTime() + 3 * 24 * 60 * 60 * 1000);
 
     const { data: events, error } = await supabase
       .from('health_events')
-      .select('id, user_id, event_type, next_date, pets(name)')
+      .select('id, pet_id, type, next_date, reminder_enabled, pets(user_id, name)')
+      .eq('reminder_enabled', true)
       .gte('next_date', now.toISOString().slice(0, 10))
       .lte('next_date', in3Days.toISOString().slice(0, 10))
       .returns<EventWithPet[]>();
@@ -114,10 +129,12 @@ Deno.serve(async (req: Request) => {
     if (error) throw error;
 
     for (const event of events ?? []) {
+      if (!event.pets) continue;
+
       const { data: subs } = await supabase
         .from('push_subscriptions')
         .select('endpoint, p256dh, auth, lang')
-        .eq('user_id', event.user_id)
+        .eq('user_id', event.pets.user_id)
         .eq('notifications_enabled', true);
 
       for (const sub of subs ?? []) {
@@ -127,8 +144,8 @@ Deno.serve(async (req: Request) => {
         subscriptions.push({ endpoint: sub.endpoint, p256dh: sub.p256dh, auth: sub.auth, lang: sub.lang });
         payloads.set(sub.endpoint, {
           type: 'health_event',
-          petName: event.pets?.name ?? 'Pet',
-          eventName: event.event_type,
+          petName: event.pets.name ?? 'Pet',
+          eventName: event.type,
           daysUntil,
           lang: sub.lang,
         });

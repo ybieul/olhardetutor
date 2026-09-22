@@ -1,6 +1,7 @@
 /**
  * Vercel cron handler — triggers the daily check-in push notification batch.
- * Scheduled in vercel.json: every day at 09:00 UTC.
+ * Scheduled in vercel.json: every day at 13:00 UTC (≈9am NY, 6am LA, 10am SP —
+ * a fixed-hour compromise across time zones; per-tutor scheduling is a later phase).
  * Proxies to the Supabase Edge Function with the shared NOTIFICATION_SECRET.
  */
 export default async function handler(req, res) {
