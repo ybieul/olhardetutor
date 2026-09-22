@@ -57,7 +57,9 @@
     "notifications": "Notifications",
     "notificationsHint": "Coming soon",
     "restartTours": "Restart tours",
-    "restartToursHint": "Show the tutorial again for each screen"
+    "restartToursHint": "Show the tutorial again for each screen",
+    "signOut": "Sign out",
+    "signOutError": "Couldn't sign out. Please try again."
   },
   "privacy": {
     "title": "Privacy",

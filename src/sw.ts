@@ -41,10 +41,16 @@ registerRoute(
   }),
 );
 
-// Receive SKIP_WAITING from the client (triggered by UpdatePrompt)
+// Receive SKIP_WAITING from the client (triggered by UpdatePrompt), and
+// CLEAR_API_CACHE on sign-out (triggered by clearApiCacheOnSignOut) so a
+// different account on the same device never sees a previous tutor's
+// cached Supabase responses — see the 'supabase-api' cacheName below.
 self.addEventListener('message', (event) => {
-  if ((event.data as { type?: string } | null)?.type === 'SKIP_WAITING') {
+  const type = (event.data as { type?: string } | null)?.type;
+  if (type === 'SKIP_WAITING') {
     void self.skipWaiting();
+  } else if (type === 'CLEAR_API_CACHE') {
+    void caches.delete('supabase-api');
   }
 });
 

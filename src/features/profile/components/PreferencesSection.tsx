@@ -1,10 +1,15 @@
+import { useState } from 'react';
+import { LogOut } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { SegmentedControl } from '@/components/ui/SegmentedControl';
 import type { SupportedLanguage } from '@/config/i18n.config';
+import { ROUTES } from '@/config/routes.config';
 import { cn } from '@/lib/cn';
+import { signOut } from '@/lib/supabase/queries/auth';
 import { useLanguageStore } from '@/store/useLanguageStore';
 import { TTS_SPEEDS, useTtsStore, type TtsSpeed } from '@/store/useTtsStore';
 import { useTourStore } from '@/store/useTourStore';
@@ -16,15 +21,31 @@ const LANGUAGE_OPTIONS: Array<{ value: SupportedLanguage; label: string }> = [
 
 export function PreferencesSection() {
   const { t } = useTranslation('profile');
+  const navigate = useNavigate();
   const { language, setLanguage } = useLanguageStore();
   const { rate, setRate } = useTtsStore();
   const resetAllTours = useTourStore((s) => s.resetAllTours);
+
+  const [signingOut, setSigningOut] = useState(false);
+  const [signOutError, setSignOutError] = useState<string | null>(null);
 
   const speedLabels: Record<TtsSpeed, string> = {
     0.7: t('preferences.audioSpeeds.slow'),
     1.0: t('preferences.audioSpeeds.normal'),
     1.3: t('preferences.audioSpeeds.fast'),
   };
+
+  async function handleSignOut() {
+    setSigningOut(true);
+    setSignOutError(null);
+    try {
+      await signOut();
+      navigate(ROUTES.login, { replace: true });
+    } catch {
+      setSignOutError(t('preferences.signOutError'));
+      setSigningOut(false);
+    }
+  }
 
   return (
     <Card padding="md" shadow="sm">
@@ -68,6 +89,23 @@ export function PreferencesSection() {
           <Button variant="secondary" size="sm" onClick={() => void resetAllTours()}>
             {t('preferences.restartTours')}
           </Button>
+        </div>
+
+        <div className="flex flex-col gap-8 border-t border-neutral-200 pt-16">
+          <Button
+            variant="secondary"
+            icon={LogOut}
+            loading={signingOut}
+            onClick={() => void handleSignOut()}
+            fullWidth
+          >
+            {t('preferences.signOut')}
+          </Button>
+          {signOutError ? (
+            <p role="alert" className="text-xs text-danger-600">
+              {signOutError}
+            </p>
+          ) : null}
         </div>
       </div>
     </Card>

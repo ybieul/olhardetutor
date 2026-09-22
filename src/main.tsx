@@ -4,6 +4,7 @@ import { createRoot } from 'react-dom/client';
 import '@/config/env';
 import '@/i18n';
 import '@/index.css';
+import '@/lib/pwa/clearApiCacheOnSignOut';
 
 import App from '@/App.tsx';
 

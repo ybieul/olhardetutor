@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
 import type { PetLifeStageKey, PetSpeciesKey } from '@/config/app.config';
+import { useAuthStore } from '@/store/useAuthStore';
 
 export type BirthDateMode = 'exact' | 'approximate';
 
@@ -72,3 +73,14 @@ export const useOnboardingStore = create<OnboardingState>()(
     },
   ),
 );
+
+// The persisted draft (localStorage) isn't scoped by user. Reset it on every
+// sign-in and sign-out so a different account on the same device/tab never
+// inherits a previous tutor's unfinished onboarding data.
+useAuthStore.subscribe((state, prevState) => {
+  const isAuthTransition =
+    state.status !== prevState.status && (state.status === 'authenticated' || state.status === 'unauthenticated');
+  if (isAuthTransition) {
+    useOnboardingStore.setState({ step: 1, data: INITIAL_DATA });
+  }
+});
