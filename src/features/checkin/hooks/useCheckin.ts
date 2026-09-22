@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { create } from 'zustand';
 
+import { toLocalDateStr, todayLocal } from '@/lib/date/todayLocal';
 import { getCheckinByDate, getCheckins, type Checkin } from '@/lib/supabase/queries/checkins';
 import { getPets, type Pet } from '@/lib/supabase/queries/pets';
 import { useAuthStore } from '@/store/useAuthStore';
@@ -49,8 +50,8 @@ const useCheckinStore = create<CheckinStore>((set, get) => ({
         return;
       }
 
-      const today = new Date().toISOString().slice(0, 10);
-      const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
+      const today = todayLocal();
+      const thirtyDaysAgo = toLocalDateStr(new Date(Date.now() - 30 * 24 * 60 * 60 * 1000));
 
       const [todayResult, historyResult] = await Promise.all([
         getCheckinByDate(firstPet.id, today),

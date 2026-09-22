@@ -1,4 +1,5 @@
 import type { OnboardingData } from '@/features/onboarding/store/useOnboardingStore';
+import { toLocalDateStr } from '@/lib/date/todayLocal';
 
 export type ProfileFieldError = 'nameError' | 'birthDateError' | 'approximateAgeError' | 'weightError';
 export type ProfileStepErrors = Partial<Record<'name' | 'birthDate' | 'approximateAge' | 'weight', ProfileFieldError>>;
@@ -51,5 +52,5 @@ export function computeBirthDate(
 
   const date = new Date();
   date.setMonth(date.getMonth() - totalMonthsAgo);
-  return date.toISOString().slice(0, 10);
+  return toLocalDateStr(date);
 }

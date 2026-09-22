@@ -5,6 +5,7 @@ import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Icon } from '@/components/ui/Icon';
 import { cn } from '@/lib/cn';
+import { toLocalDateStr } from '@/lib/date/todayLocal';
 import { getScoreBand } from '../scoring';
 import { ScoreTrend } from './ScoreTrend';
 import type { Checkin } from '@/lib/supabase/queries/checkins';
@@ -35,7 +36,7 @@ function buildTrendPoints(history: Checkin[]) {
   return Array.from({ length: 7 }, (_, i) => {
     const d = new Date(today);
     d.setDate(d.getDate() - (6 - i));
-    const dateStr = d.toISOString().slice(0, 10);
+    const dateStr = toLocalDateStr(d);
     const score = scoreByDate.get(dateStr) ?? null;
     return { date: dateStr, score };
   });

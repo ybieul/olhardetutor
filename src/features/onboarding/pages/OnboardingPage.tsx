@@ -12,6 +12,7 @@ import { StepLifeStage } from '@/features/onboarding/components/StepLifeStage';
 import { StepProfile } from '@/features/onboarding/components/StepProfile';
 import { StepBaseline } from '@/features/onboarding/components/StepBaseline';
 import { computeBirthDate, validateProfileStep } from '@/features/onboarding/lib/petProfileHelpers';
+import { todayLocal } from '@/lib/date/todayLocal';
 import { upsertPet } from '@/lib/supabase/queries/pets';
 import { addWeightEntry } from '@/lib/supabase/queries/weightHistory';
 import { updateProfile } from '@/lib/supabase/queries/profiles';
@@ -81,7 +82,7 @@ export function OnboardingPage() {
         photo_url: data.photoPath,
       });
 
-      const today = new Date().toISOString().slice(0, 10);
+      const today = todayLocal();
       // Best-effort: the pet already exists at this point, which is what
       // PetGate checks — a hiccup seeding the first weight point or
       // flipping onboarding_completed shouldn't trap the tutor in a retry

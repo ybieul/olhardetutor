@@ -7,6 +7,7 @@ import { Checkbox } from '@/components/ui/Checkbox';
 import { SegmentedControl } from '@/components/ui/SegmentedControl';
 import { Avatar } from '@/components/ui/Avatar';
 import { Button } from '@/components/ui/Button';
+import { todayLocal } from '@/lib/date/todayLocal';
 import { getPetPhotoUrl, uploadPetPhoto } from '@/lib/supabase/queries/pets';
 import { useOnboardingStore, type BirthDateMode } from '@/features/onboarding/store/useOnboardingStore';
 import type { ProfileStepErrors } from '@/features/onboarding/lib/petProfileHelpers';
@@ -143,7 +144,7 @@ export function StepProfile({ errors }: StepProfileProps) {
             type="date"
             value={data.birthDate}
             onChange={(event) => updateData({ birthDate: event.target.value })}
-            max={new Date().toISOString().slice(0, 10)}
+            max={todayLocal()}
             error={errors.birthDate ? t(`profile.${errors.birthDate}`) : undefined}
           />
         ) : (

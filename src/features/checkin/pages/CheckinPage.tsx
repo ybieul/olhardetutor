@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/Button';
 import { Skeleton } from '@/components/ui/Skeleton';
 import { Icon } from '@/components/ui/Icon';
 import { TourOverlay } from '@/components/tutorial/TourOverlay';
+import { todayLocal } from '@/lib/date/todayLocal';
 import { upsertCheckin } from '@/lib/supabase/queries/checkins';
 import { computeDayScore, deriveStoolStatus, deriveUrineStatus } from '../scoring';
 import { useCheckin } from '../hooks/useCheckin';
@@ -32,7 +33,7 @@ export function CheckinPage() {
     setSaveError(null);
 
     try {
-      const today = new Date().toISOString().slice(0, 10);
+      const today = todayLocal();
       const dayScore = computeDayScore(form);
 
       const saved = await upsertCheckin({

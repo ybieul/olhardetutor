@@ -3,15 +3,12 @@ import { useTranslation } from 'react-i18next';
 
 import { Card } from '@/components/ui/Card';
 import { Icon } from '@/components/ui/Icon';
+import { toLocalDateStr } from '@/lib/date/todayLocal';
 import type { Checkin } from '@/lib/supabase/queries/checkins';
 
 type StreakCardProps = {
   checkins: Checkin[];
 };
-
-function localDateStr(date: Date): string {
-  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
-}
 
 function calculateStreak(checkins: Checkin[]): number {
   if (checkins.length === 0) return 0;
@@ -22,7 +19,7 @@ function calculateStreak(checkins: Checkin[]): number {
   let streak = 0;
   let cursor = new Date(today);
 
-  while (dateSet.has(localDateStr(cursor))) {
+  while (dateSet.has(toLocalDateStr(cursor))) {
     streak++;
     cursor.setDate(cursor.getDate() - 1);
   }
@@ -31,7 +28,7 @@ function calculateStreak(checkins: Checkin[]): number {
   if (streak === 0) {
     cursor = new Date(today);
     cursor.setDate(cursor.getDate() - 1);
-    while (dateSet.has(localDateStr(cursor))) {
+    while (dateSet.has(toLocalDateStr(cursor))) {
       streak++;
       cursor.setDate(cursor.getDate() - 1);
     }
