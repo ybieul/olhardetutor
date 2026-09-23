@@ -27,17 +27,23 @@ Todos os caminhos são relativos a `public/`, então um arquivo em
 | `emptyStatePet`        | `empty-state-pet.svg`        | `public/assets/illustrations/` | 280×280 px             | SVG     | Transparente          | Estado vazio da Home quando o tutor ainda não cadastrou nenhum pet                                                                  |
 | `placeholderAvatar`    | `placeholder-avatar.svg`     | `public/assets/illustrations/` | 128×128 px             | SVG     | Transparente          | Ilustração de placeholder para foto de pet — complementa o fallback de ícone do componente `Avatar`                                 |
 | `pwaIcon192`           | `icon-192.png`               | `public/assets/pwa/`           | 192×192 px             | PNG     | Sólido (cor da marca) | Ícone do PWA (manifest, atalho na tela inicial Android/desktop)                                                                     |
-| `pwaIcon512`           | `icon-512.png`               | `public/assets/pwa/`           | 512×512 px             | PNG     | Sólido (cor da marca) | Ícone do PWA em alta resolução (splash gerado pelo SO, ícone maskable, lojas)                                                       |
+| `pwaIcon512`           | `icon-512.png`               | `public/assets/pwa/`           | 512×512 px             | PNG     | Sólido (cor da marca) | Ícone do PWA em alta resolução (splash gerado pelo SO, lojas) — `purpose: "any"` no manifest                                        |
+| `pwaIcon512Maskable`   | `icon-512-maskable.png`      | `public/assets/pwa/`           | 512×512 px             | PNG     | Sólido, edge-to-edge  | Variante `purpose: "maskable"` do manifest — mesmo desenho de `pwaIcon512`, mas com a marca confinada à zona segura central (~66%) para sobreviver a qualquer recorte de forma do SO |
 
 ## Notas
 
 - **SVG** é o formato padrão para logos e ilustrações porque escala sem
   perda em qualquer densidade de tela. **PNG** é reservado para os ícones
-  de PWA (`pwaIcon192`/`pwaIcon512`), que precisam de pixels exatos para o
-  manifest do navegador — não use SVG nesses dois.
-- **Fundo sólido** nos ícones de PWA existe porque o Android/iOS podem
-  recortar o ícone em formas diferentes (maskable icons); um fundo
-  transparente resulta em bordas cortadas de forma inconsistente.
+  de PWA (`pwaIcon192`/`pwaIcon512`/`pwaIcon512Maskable`), que precisam de
+  pixels exatos para o manifest do navegador — não use SVG nesses três.
+- **Fundo sólido, edge-to-edge** nos ícones de PWA existe porque o
+  Android/iOS podem recortar o ícone em formas diferentes (maskable
+  icons); um fundo transparente resulta em bordas cortadas de forma
+  inconsistente. `pwaIcon512Maskable` é um arquivo **separado** de
+  `pwaIcon512` (não o mesmo arquivo reaproveitado) justamente porque a
+  margem de segurança exigida pelo `purpose: "maskable"` é maior do que a
+  do ícone normal — ver a especificação em
+  [web.dev/maskable-icon](https://web.dev/articles/maskable-icon).
 - **Versões claras/escuras**: `logoPrimary` é a versão padrão (fundos
   claros); `logoWhite` é a variante para fundos escuros. Use a chave
   correta conforme o contexto — não aplique filtros CSS para simular a

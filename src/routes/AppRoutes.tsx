@@ -45,7 +45,8 @@ export function AppRoutes() {
             <Route path={ROUTES.guides} element={<GuidesPage />} />
             <Route path={ROUTES.agenda} element={<AgendaPage />} />
             <Route path={ROUTES.profile} element={<ProfilePage />} />
-            <Route path={ROUTES.devShowcase} element={<DevShowcasePage />} />
+            {/* Component gallery for visual QA — never registered in production. */}
+            {import.meta.env.DEV ? <Route path={ROUTES.devShowcase} element={<DevShowcasePage />} /> : null}
           </Route>
         </Route>
       </Route>

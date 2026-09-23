@@ -17,6 +17,7 @@ export const ASSET_PATHS = {
   placeholderAvatar: '/assets/illustrations/placeholder-avatar.svg',
   pwaIcon192: '/assets/pwa/icon-192.png',
   pwaIcon512: '/assets/pwa/icon-512.png',
+  pwaIcon512Maskable: '/assets/pwa/icon-512-maskable.png',
 } as const;
 
 export type AssetKey = keyof typeof ASSET_PATHS;

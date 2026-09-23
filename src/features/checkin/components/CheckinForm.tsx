@@ -6,7 +6,6 @@ import { TextArea } from '@/components/ui/TextArea';
 import { Card } from '@/components/ui/Card';
 import { Icon } from '@/components/ui/Icon';
 import { useCheckinFormStore } from '@/features/checkin/store/useCheckinFormStore';
-import { sanitizeFreeText } from '@/lib/security/sanitize';
 import { CategoryStatus } from './CategoryStatus';
 import type { LucideIcon } from 'lucide-react';
 import type { ReactNode } from 'react';
@@ -153,7 +152,7 @@ export function CheckinForm() {
           helperText={t('freeNote.helperText')}
           value={form.freeNote}
           rows={3}
-          onChange={(e) => update({ freeNote: sanitizeFreeText(e.target.value) })}
+          onChange={(e) => update({ freeNote: e.target.value })}
         />
       </Section>
     </div>

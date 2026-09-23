@@ -7,6 +7,7 @@ import { Skeleton } from '@/components/ui/Skeleton';
 import { Icon } from '@/components/ui/Icon';
 import { TourOverlay } from '@/components/tutorial/TourOverlay';
 import { todayLocal } from '@/lib/date/todayLocal';
+import { sanitizeFreeText } from '@/lib/security/sanitize';
 import { upsertCheckin } from '@/lib/supabase/queries/checkins';
 import { computeDayScore, deriveStoolStatus, deriveUrineStatus } from '../scoring';
 import { useCheckin } from '../hooks/useCheckin';
@@ -48,7 +49,7 @@ export function CheckinPage() {
         urine_status: deriveUrineStatus(form.urineStatus, form.urineDetails),
         urine_details: form.urineDetails as Record<string, boolean>,
         behavior: form.behavior,
-        free_note: form.freeNote || null,
+        free_note: form.freeNote ? sanitizeFreeText(form.freeNote) : null,
         day_score: dayScore,
       });
 
