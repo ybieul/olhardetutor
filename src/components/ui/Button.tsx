@@ -16,15 +16,21 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: ReactNode;
 };
 
+// Text/background pairs below are chosen to clear WCAG 1.4.3 (4.5:1) in
+// every state — see docs/SECURITY.md or the Fase 11 audit for the
+// measured ratios. `primary` keeps primary-500 (the brand color used
+// everywhere else) but switches to dark text (7.18:1) instead of white
+// (2.38:1); `danger` starts one shade darker (danger-600, 5.83:1) since
+// white on danger-500 measures 4.27:1, just under the minimum.
 const VARIANT_CLASSES: Record<ButtonVariant, string> = {
-  primary: 'bg-primary-500 text-white hover:bg-primary-600 active:bg-primary-700',
+  primary: 'bg-primary-500 text-foreground-light hover:bg-primary-600 active:bg-primary-600',
   secondary: 'bg-neutral-100 text-foreground-light hover:bg-neutral-200 active:bg-neutral-300',
   ghost: 'bg-transparent text-foreground-light hover:bg-neutral-100 active:bg-neutral-200',
-  danger: 'bg-danger-500 text-white hover:bg-danger-600 active:bg-danger-700',
+  danger: 'bg-danger-600 text-white hover:bg-danger-700 active:bg-danger-800',
 };
 
 const ICON_COLOR_BY_VARIANT: Record<ButtonVariant, IconColor> = {
-  primary: 'white',
+  primary: 'current',
   secondary: 'current',
   ghost: 'current',
   danger: 'white',

@@ -28,6 +28,7 @@ export function Slider({ label, value, onChange, marks, id }: SliderProps) {
   const min = Math.min(...values);
   const max = Math.max(...values);
   const center = min + Math.round((max - min) / 2);
+  const currentMark = marks.find((mark) => mark.value === value);
 
   return (
     <div className="flex flex-col gap-8">
@@ -42,6 +43,7 @@ export function Slider({ label, value, onChange, marks, id }: SliderProps) {
         step={1}
         value={value}
         onChange={(event) => onChange(Number(event.target.value))}
+        aria-valuetext={currentMark?.label}
         className="h-track-md w-full cursor-pointer appearance-none rounded-full bg-neutral-200 accent-primary-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
       />
       <div className="flex justify-between">

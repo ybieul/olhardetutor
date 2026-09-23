@@ -25,9 +25,13 @@ export function buildTourStyles(): PartialDeep<Styles> {
       padding: 0,
     },
     buttonPrimary: {
+      // Dark text on primary-500 measures 7.18:1 — white on the same
+      // background measures 2.38:1, well under the WCAG 1.4.3 minimum of
+      // 4.5:1. Same fix as the primary Button variant (Button.tsx), which
+      // this tooltip reproduces manually instead of reusing.
       backgroundColor: colors.primary[500],
       borderRadius: radius.md,
-      color: colors.white,
+      color: colors.neutral[900],
       fontSize: '0.875rem',
       padding: '0.5rem 1rem',
       outline: 'none',
