@@ -58,7 +58,7 @@
         {
           "id": "why-matters",
           "title": "Why This Changes Everything",
-          "body": "Vets repeat it: what is most missing in appointments is longitudinal data. Knowing your pet ate less this week, not just today, changes the differential diagnosis. With the app's history, you arrive at the appointment with concrete data from 7, 15, or 30 days — and that accelerates diagnosis.",
+          "body": "Vets repeat it: what is most missing in appointments is longitudinal data. Knowing your pet ate less this week, not just today, changes the vet's assessment. With the app's history, you arrive at the appointment with concrete data from 7, 15, or 30 days — and that helps the vet act faster.",
           "species": "all"
         }
       ]
@@ -106,7 +106,7 @@
         {
           "id": "persistence",
           "title": "The Persistence Rule",
-          "body": "Not every change is a warning sign. Pets are less active on cold days, eat less after intense exercise, sleep more when there is noise or stress at home. The difference between normal variation and a signal lies in persistence. A change for 1 day: observe. For 3 days: pay attention. For 5 days or more: consult your vet.",
+          "body": "Not every change is a warning sign. Pets are less active on cold days, eat less after intense exercise, sleep more when there is noise or stress at home. The difference between normal variation and a signal lies in persistence. As a general observation guide — not a fixed triage rule — a change for 1 day is usually just worth observing. For 3 days, it is worth paying attention. For 5 days or more, it is time to consult your vet.",
           "species": "all"
         },
         {
@@ -142,7 +142,7 @@
         {
           "id": "bring-to-vet",
           "title": "What to Bring to the Appointment",
-          "body": "At your next appointment, you can show the vet the daily score trend, the categories with the most frequent variation, and the free notes from the period. This transforms I felt she was acting strange into 15 days of data showing a gradual reduction in energy and appetite. That level of information speeds up diagnosis.",
+          "body": "At your next appointment, you can show the vet the daily score trend, the categories with the most frequent variation, and the free notes from the period. This transforms I felt she was acting strange into 15 days of data showing a gradual reduction in energy and appetite. That level of information helps the vet reach a decision faster.",
           "species": "all"
         },
         {
@@ -172,13 +172,13 @@
         {
           "id": "urgent",
           "title": "Urgency Level",
-          "body": "Go to the vet today. Signs that cannot wait: total water refusal for more than 24 hours, visible difficulty breathing, blood in stool or urine, loss of consciousness or seizure, very distended abdomen, pale or blue gums. In these cases, do not wait for the next scheduled appointment.",
+          "body": "Go to the vet today. Signs that cannot wait: total water refusal for more than 24 hours, visible difficulty breathing, blood in stool or urine, loss of consciousness or seizure, very distended abdomen, pale or blue gums. This list is educational and does not cover every possible sign — when in doubt, see a vet. In these cases, do not wait for the next scheduled appointment.",
           "species": "all"
         },
         {
           "id": "golden-rule",
           "title": "The Golden Rule",
-          "body": "When in doubt, go. The cost of an unnecessary appointment is infinitely less than the cost of a disease diagnosed too late. You have the data. You have the history. Use them. The button below opens Google Maps searching for vets near you.",
+          "body": "When in doubt, go. The cost of an unnecessary appointment is infinitely less than the cost of a problem caught too late. You have the data. You have the history. Use them. The button below opens Google Maps searching for vets near you.",
           "species": "all"
         }
       ]

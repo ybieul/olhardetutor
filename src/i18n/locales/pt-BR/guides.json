@@ -58,7 +58,7 @@
         {
           "id": "why-matters",
           "title": "Por Que Isso Muda Tudo",
-          "body": "Veterinários repetem: o que mais falta numa consulta são dados longitudinais. Saber que seu pet comeu menos esta semana, não só hoje, muda o diagnóstico diferencial. Com o histórico do app, você chega à consulta com dados concretos de 7, 15 ou 30 dias — e isso acelera o diagnóstico.",
+          "body": "Veterinários repetem: o que mais falta numa consulta são dados longitudinais. Saber que seu pet comeu menos esta semana, não só hoje, muda a avaliação do veterinário. Com o histórico do app, você chega à consulta com dados concretos de 7, 15 ou 30 dias — e isso ajuda o veterinário a agir mais rápido.",
           "species": "all"
         }
       ]
@@ -106,7 +106,7 @@
         {
           "id": "persistence",
           "title": "A Regra da Persistência",
-          "body": "Nem toda mudança é um sinal de alerta. Pets ficam menos ativos em dias frios, comem menos após exercício intenso, dormem mais quando há barulho ou estresse na casa. A diferença entre variação normal e sinal está na persistência. Uma mudança por 1 dia: observe. Por 3 dias: preste atenção. Por 5 dias ou mais: consulte seu veterinário.",
+          "body": "Nem toda mudança é um sinal de alerta. Pets ficam menos ativos em dias frios, comem menos após exercício intenso, dormem mais quando há barulho ou estresse na casa. A diferença entre variação normal e sinal está na persistência. Como referência geral de observação — não uma regra fixa de triagem —, uma mudança por 1 dia costuma ser só para observar. Por 3 dias, já vale prestar atenção. Por 5 dias ou mais, é hora de consultar seu veterinário.",
           "species": "all"
         },
         {
@@ -142,7 +142,7 @@
         {
           "id": "bring-to-vet",
           "title": "O Que Levar à Consulta",
-          "body": "Na sua próxima consulta, você pode mostrar ao veterinário a evolução do score diário, as categorias com variação mais frequente e as notas livres do período. Isso transforma achei que ela estava estranha em 15 dias de dados mostrando redução gradual de energia e apetite. Esse nível de informação acelera o diagnóstico.",
+          "body": "Na sua próxima consulta, você pode mostrar ao veterinário a evolução do score diário, as categorias com variação mais frequente e as notas livres do período. Isso transforma achei que ela estava estranha em 15 dias de dados mostrando redução gradual de energia e apetite. Esse nível de informação ajuda o veterinário a chegar a uma decisão mais rápido.",
           "species": "all"
         },
         {
@@ -172,13 +172,13 @@
         {
           "id": "urgent",
           "title": "Nível Urgência",
-          "body": "Vá ao veterinário hoje. Sinais que não esperam: recusa total de água por mais de 24 horas, dificuldade respiratória visível, sangue nas fezes ou urina, perda de consciência ou convulsão, abdome muito distendido, gengivas pálidas ou azuladas. Nesses casos, não espere pela próxima consulta agendada.",
+          "body": "Vá ao veterinário hoje. Sinais que não esperam: recusa total de água por mais de 24 horas, dificuldade respiratória visível, sangue nas fezes ou urina, perda de consciência ou convulsão, abdome muito distendido, gengivas pálidas ou azuladas. Esta lista é educativa e não cobre todos os sinais possíveis — na dúvida, procure o veterinário. Nesses casos, não espere pela próxima consulta agendada.",
           "species": "all"
         },
         {
           "id": "golden-rule",
           "title": "A Regra de Ouro",
-          "body": "Em caso de dúvida, vá. O custo de uma consulta desnecessária é infinitamente menor do que o custo de uma doença diagnosticada tarde. Você tem os dados. Você tem o histórico. Use-os. O botão abaixo abre o Google Maps com busca por veterinários próximos a você.",
+          "body": "Em caso de dúvida, vá. O custo de uma consulta desnecessária é infinitamente menor do que o custo de um problema identificado tarde demais. Você tem os dados. Você tem o histórico. Use-os. O botão abaixo abre o Google Maps com busca por veterinários próximos a você.",
           "species": "all"
         }
       ]

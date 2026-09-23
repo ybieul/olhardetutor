@@ -99,7 +99,7 @@
     "message": {
       "high": "{{name}} had a great day! Keep up the daily observation.",
       "medium": "OK day. Keep an eye on a few categories that need attention.",
-      "low": "Several variations today. If this persists, consider consulting your vet."
+      "low": "Several variations from your pet's usual pattern today. If this persists, consider consulting your vet."
     },
     "trendTitle": "Last 7 days",
     "noHistory": "This is the first check-in!",
