@@ -36,6 +36,20 @@ export const useNotificationStore = create<NotificationStore>()((set, get) => ({
     } catch {
       // SW not registered yet — that's fine
     }
+
+    // Reflect a permission change made outside the app (browser/OS
+    // settings) in the card without requiring a reload.
+    if ('permissions' in navigator) {
+      try {
+        const status = await navigator.permissions.query({ name: 'notifications' });
+        status.onchange = () => {
+          const nextPermission = getPermission();
+          set({ permission: nextPermission, isSubscribed: nextPermission === 'granted' && get().isSubscribed });
+        };
+      } catch {
+        // permissions.query for 'notifications' isn't supported everywhere (e.g. Safari) — ignore
+      }
+    }
   },
 
   async enable(lang: string) {

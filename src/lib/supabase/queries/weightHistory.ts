@@ -14,8 +14,13 @@ export async function getWeightHistory(petId: string): Promise<WeightEntry[]> {
   return data;
 }
 
+/** Insert or update the weight reading for `input.pet_id` + `input.date` (unique per pet per day). */
 export async function addWeightEntry(input: AddWeightEntryInput): Promise<WeightEntry> {
-  const { data, error } = await supabase.from('weight_history').insert(input).select('*').single();
+  const { data, error } = await supabase
+    .from('weight_history')
+    .upsert(input, { onConflict: 'pet_id,date' })
+    .select('*')
+    .single();
   if (error) throw error;
   return data;
 }

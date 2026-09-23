@@ -166,7 +166,24 @@ Deno.serve(async (req: Request) => {
   const sent = results.filter((r) => r.status === 'fulfilled').length;
   const failed = results.filter((r) => r.status === 'rejected').length;
 
-  return new Response(JSON.stringify({ sent, failed }), {
+  // web-push rejects with a WebPushError carrying `statusCode` when the push
+  // service confirms the subscription is gone for good (uninstalled,
+  // permission revoked at the OS level) — 404/410 specifically, never
+  // anything transient. Delete those rows instead of retrying them forever.
+  const deadEndpoints = results
+    .map((result, i) => ({ result, endpoint: subscriptions[i]?.endpoint }))
+    .filter((x): x is { result: PromiseRejectedResult; endpoint: string } => x.result.status === 'rejected' && !!x.endpoint)
+    .filter(({ result }) => {
+      const reason = result.reason as { statusCode?: number } | undefined;
+      return reason?.statusCode === 404 || reason?.statusCode === 410;
+    })
+    .map(({ endpoint }) => endpoint);
+
+  if (deadEndpoints.length > 0) {
+    await supabase.from('push_subscriptions').delete().in('endpoint', deadEndpoints);
+  }
+
+  return new Response(JSON.stringify({ sent, failed, removed: deadEndpoints.length }), {
     headers: { ...corsHeaders, 'Content-Type': 'application/json' },
   });
 });

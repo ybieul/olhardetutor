@@ -65,7 +65,7 @@ export function StepProfile({ errors }: StepProfileProps) {
     setUploading(true);
 
     try {
-      const path = await uploadPetPhoto(file);
+      const path = await uploadPetPhoto(file, data.photoPath);
       updateData({ photoPath: path });
     } catch {
       setUploadError(true);

@@ -36,6 +36,7 @@ export async function deletePet(petId: string): Promise<void> {
 }
 
 const PET_PHOTOS_BUCKET = 'pet-photos';
+const MAX_PET_PHOTO_BYTES = 5 * 1024 * 1024;
 
 /**
  * Uploads a pet photo under the signed-in user's own storage folder (the
@@ -45,15 +46,35 @@ const PET_PHOTOS_BUCKET = 'pet-photos';
  *
  * Named "onboarding-*" because it's uploaded before the pet row exists
  * (so there's no pet id yet to key it by); the path is stable once
- * attached to the pet and never needs to move.
+ * attached to the pet and never needs to move. Pass `previousPath` when
+ * replacing an existing photo so the old file doesn't linger as an orphan.
+ *
+ * Throws a plain Error on an invalid file — the caller already maps any
+ * failure here to a generic, i18n-driven message (never this message
+ * itself, per CLAUDE.md).
  */
-export async function uploadPetPhoto(file: File): Promise<string> {
+export async function uploadPetPhoto(file: File, previousPath?: string | null): Promise<string> {
+  if (!file.type.startsWith('image/')) {
+    throw new Error('Invalid file type: expected an image');
+  }
+  if (file.size > MAX_PET_PHOTO_BYTES) {
+    throw new Error('File too large: max 5MB');
+  }
+
   const userId = await getCurrentUserId();
   const extension = file.name.split('.').pop()?.toLowerCase() || 'jpg';
   const path = `${userId}/onboarding-${Date.now()}.${extension}`;
 
   const { error } = await supabase.storage.from(PET_PHOTOS_BUCKET).upload(path, file, { upsert: true });
   if (error) throw error;
+
+  if (previousPath && previousPath !== path) {
+    try {
+      await supabase.storage.from(PET_PHOTOS_BUCKET).remove([previousPath]);
+    } catch {
+      // Best-effort cleanup — a stray orphan file isn't worth failing the upload over.
+    }
+  }
 
   return path;
 }

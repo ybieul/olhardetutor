@@ -13,7 +13,8 @@ import { StepProfile } from '@/features/onboarding/components/StepProfile';
 import { StepBaseline } from '@/features/onboarding/components/StepBaseline';
 import { computeBirthDate, validateProfileStep } from '@/features/onboarding/lib/petProfileHelpers';
 import { todayLocal } from '@/lib/date/todayLocal';
-import { upsertPet } from '@/lib/supabase/queries/pets';
+import { sanitizeFreeText } from '@/lib/security/sanitize';
+import { getPets, upsertPet } from '@/lib/supabase/queries/pets';
 import { addWeightEntry } from '@/lib/supabase/queries/weightHistory';
 import { updateProfile } from '@/lib/supabase/queries/profiles';
 
@@ -71,12 +72,22 @@ export function OnboardingPage() {
     setSubmitError(null);
 
     try {
+      // PetGate already keeps a tutor with a pet out of this route, but a
+      // retried request (dropped response, double tab) can still race past
+      // it — this is the last line of defense against a duplicate pet.
+      const existingPets = await getPets();
+      if (existingPets.length > 0) {
+        reset();
+        navigate(ROUTES.home, { replace: true });
+        return;
+      }
+
       const weightKg = Number(data.weightKg);
       const pet = await upsertPet({
-        name: data.name.trim(),
+        name: sanitizeFreeText(data.name, 60),
         species: data.species,
         life_stage: data.lifeStage,
-        breed: data.breedUnknown ? null : data.breed.trim() || null,
+        breed: data.breedUnknown ? null : sanitizeFreeText(data.breed, 60) || null,
         birth_date: computeBirthDate(data),
         initial_weight: weightKg,
         photo_url: data.photoPath,
