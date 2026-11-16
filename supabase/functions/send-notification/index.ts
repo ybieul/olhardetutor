@@ -16,6 +16,11 @@
  *
  * Generate VAPID keys:
  *   npx web-push generate-vapid-keys
+ *
+ * Deploy with: supabase functions deploy send-notification --no-verify-jwt
+ * (the Vercel cron authenticates with the shared secret above, not with a
+ * Supabase JWT, so the gateway must not demand one — the secret check
+ * below is what protects this endpoint, and it fails closed.)
  */
 
 import { createClient } from 'npm:@supabase/supabase-js@2';
@@ -59,9 +64,17 @@ Deno.serve(async (req: Request) => {
     return new Response('ok', { headers: corsHeaders });
   }
 
-  // Validate shared secret
+  // Validate shared secret — fail closed. An unset/empty secret must never
+  // turn this into an open endpoint: it can push a notification to every
+  // subscriber in the database.
+  if (!NOTIFICATION_SECRET) {
+    return new Response(JSON.stringify({ error: 'Not configured (missing NOTIFICATION_SECRET)' }), {
+      status: 500,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
+  }
   const authHeader = req.headers.get('authorization') ?? '';
-  if (NOTIFICATION_SECRET && authHeader !== `Bearer ${NOTIFICATION_SECRET}`) {
+  if (authHeader !== `Bearer ${NOTIFICATION_SECRET}`) {
     return new Response(JSON.stringify({ error: 'Unauthorized' }), {
       status: 401,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
